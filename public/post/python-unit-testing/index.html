@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Python unit testing - Begueradj</title>
+  <meta property="og:title" content="Python unit testing" />
+  <meta name="twitter:title" content="Python unit testing" />
+  <meta name="description" content="Introduction I first thought to write about TDD (Test-Driven Development), but given the list of reminders I have to emphasize and which would lead to a very lengthy article, I decided to shrink the work into smaller edible articles.
+You can find a lots of documentation about unit testing with Python on the Internet, so why am I adding this brick? That is not your business. But landing on this page will be useful for you as I found highly ranked -by Google- online resources discussing Python unit testing where the authors either mislead you at best or misinform you, not because they do not know but because they do not give importance to details.">
+  <meta property="og:description" content="Introduction I first thought to write about TDD (Test-Driven Development), but given the list of reminders I have to emphasize and which would lead to a very lengthy article, I decided to shrink the work into smaller edible articles.
+You can find a lots of documentation about unit testing with Python on the Internet, so why am I adding this brick? That is not your business. But landing on this page will be useful for you as I found highly ranked -by Google- online resources discussing Python unit testing where the authors either mislead you at best or misinform you, not because they do not know but because they do not give importance to details.">
+  <meta name="twitter:description" content="Introduction I first thought to write about TDD (Test-Driven Development), but given the list of reminders I have to emphasize and which would lead to a very lengthy article, I decided to shrink the …">
+  <meta name="author" content="Billal Begueradj"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Begueradj",
+    
+    "url": "https://www.begueradj.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https://www.begueradj.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://www.begueradj.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https://www.begueradj.com/post/python-unit-testing/",
+          "name": "Python unit testing"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Billal Begueradj"
+  },
+  "headline": "Python unit testing",
+  "description" : "Introduction I first thought to write about TDD (Test-Driven Development), but given the list of reminders I have to emphasize and which would lead to a very lengthy article, I decided to shrink the work into smaller edible articles.
+You can find a lots of documentation about unit testing with Python on the Internet, so why am I adding this brick? That is not your business. But landing on this page will be useful for you as I found highly ranked -by Google- online resources discussing Python unit testing where the authors either mislead you at best or misinform you, not because they do not know but because they do not give importance to details.",
+  "inLanguage" : "en",
+  "wordCount": 1858,
+  "datePublished" : "2017-03-13T12:33:21",
+  "dateModified" : "2017-03-13T12:33:21",
+  "image" : "https://www.begueradj.com/begueradj.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https://www.begueradj.com/post/python-unit-testing/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https://www.begueradj.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https://www.begueradj.com/begueradj.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Python unit testing" />
+<meta property="og:description" content="Introduction I first thought to write about TDD (Test-Driven Development), but given the list of reminders I have to emphasize and which would lead to a very lengthy article, I decided to shrink the work into smaller edible articles.
+You can find a lots of documentation about unit testing with Python on the Internet, so why am I adding this brick? That is not your business. But landing on this page will be useful for you as I found highly ranked -by Google- online resources discussing Python unit testing where the authors either mislead you at best or misinform you, not because they do not know but because they do not give importance to details.">
+<meta property="og:image" content="https://www.begueradj.com/begueradj.png" />
+<meta property="og:url" content="https://www.begueradj.com/post/python-unit-testing/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Begueradj" />
+  <meta name="twitter:title" content="Python unit testing" />
+  <meta name="twitter:description" content="Introduction I first thought to write about TDD (Test-Driven Development), but given the list of reminders I have to emphasize and which would lead to a very lengthy article, I decided to shrink the …">
+  <meta name="twitter:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://www.begueradj.com/begueradj.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://www.begueradj.com/post/python-unit-testing/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Begueradj" />
+
+  <meta name="generator" content="Hugo 0.53" />
+  <link rel="alternate" href="https://www.begueradj.com/index.xml" type="application/rss+xml" title="Begueradj">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.begueradj.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://www.begueradj.com/css/highlight.min.css" /><link rel="stylesheet" href="https://www.begueradj.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.begueradj.com">Begueradj</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Categories" href="/categories">Categories</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Begueradj" href="https://www.begueradj.com">
+            <img class="avatar-img" src="https://www.begueradj.com/begueradj.png" alt="Begueradj" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Python unit testing</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on March 13, 2017
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;9&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1858&nbsp;words
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Billal Begueradj
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h3 id="introduction">Introduction</h3>
+
+<p>I first thought to write about TDD (<em>Test-Driven Development</em>), but given the list of reminders I have to emphasize and which would lead to a very lengthy article, I decided to shrink the work into smaller edible articles.</p>
+
+<p>You can find a lots of documentation about unit testing with Python on the Internet, so why am I adding this brick? That is not your business. But landing on this page will be useful for you as I found highly ranked -<em>by Google</em>- online resources discussing Python unit testing where the authors either mislead you at best or misinform you, not because they do not know but because they do not give importance to details.Yes, as a programmer, your job is to be  obsessed by details.</p>
+
+<ul>
+<li><a href="#history">History</a></li>
+<li><a href="#definition">What is unit testing?</a></li>
+<li><a href="#what2test">What to test?</a></li>
+<li><a href="#usefulness">What are unit tests useful for?</a></li>
+<li><a href="#how">How to write a unit test?</a></li>
+<li><a href="#tools">Which tools to use?</a></li>
+<li><a href="#antipatterns">Anti patterns</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+
+<p><a name="history"></a></p>
+
+<h3 id="history">History</h3>
+
+<p>In the old days, when computers were slow, very simple and short programs were taking dozens of minutes to build. In those days, the days of ENIAC and EDVAC, programmers were used to take long hours trying to figure out what went wrong. It was the era of debugging. Yes, debugging is the father of all advanced testing techniques you know today. During the 1970’s, testing became a distinct idea from debugging when computers became faster thanks to IBM who released, by the start of 1970’s,  the first computer to use a semiconductor memory allowing programmers to develop some primitive but yet interesting video games such as Atari 2600 by the end of that decade.</p>
+
+<p>Nowadays, unit testing is already an old concept which gave birth to several grand children such as TDD, BDD and ATDD; but do not be surprised to hear some of your development colleagues think of it as a new one.</p>
+
+<p>On the coming Summer holidays, you may read <em>The Growth of Software Testing</em> by <em>D. Gelperin, B. Hetzel</em> who covered the history of testing at best.
+<a name="definition"></a></p>
+
+<h3 id="what-is-unit-testing">What is unit testing?</h3>
+
+<p>Unit testing is all about moving through the small code units of your application to see if, given certain circumstances and conditions, they respond as expected to fulfill the desired functionality. In plainer English, unit testing is  about hunting for eventual errors that may lay in your program functions. If unit tests do not show errors in your code, it does not mean there are no errors or that your program is correct: they just are, when well written, a paramount milestone that help you to product a good quality software by reducing the number of errors. This means unit tests are not a means by themselves but are a way that helps to walk safely to the end.
+<a name="what2test"></a></p>
+
+<h3 id="what-to-test">What to test?</h3>
+
+<p>Obviously, you have to test your smallest code units. The smallest code units you have are not classes but the functions they wrap. If your code  is not organized in terms of classes or functions then you should shift your career from a developer to a dish washer in the nearest restaurant to your living place.</p>
+
+<p>After you refactor a given function without changing its functionality and you found out that the corresponding unit test no longer passes then you can fairly conclude that your unit test is wrong because unit tests are there to confirm or infirm  functionality not implementation details.
+<a name="how"></a></p>
+
+<h3 id="how-to-write-a-unit-test">How to write a unit test?</h3>
+
+<p>There are many details to talk about, but I am not going to highlight the basic principles you must not forget when you plan to code a unit test in Python:
+<a name="points"></a></p>
+
+<ol>
+<li>Your test class must inherit from <code>unittest.TestCase</code>.</li>
+<li>Your test class should be prefixed with <strong><em>Test</em></strong>.</li>
+<li>Run the test module by calling <code>unittest.main()</code>.</li>
+<li>The test modules must trail with <strong><em>_test</em></strong>.</li>
+<li>The test functions should be prefixed by <strong><em>test_</em></strong>.</li>
+<li>Last but not the least, all unit tests must be independent from each others.</li>
+</ol>
+
+<p>Keep this in mind and let us work on an example: the present tutorial is the first step to write a primitive calculator with a graphical user interface to perform addition, subtraction, multiplication and division of integer and float numbers.</p>
+
+<p>First, create a virtual environment with the following hierarchy:</p>
+
+<pre><code class="language-c">.
+├── calculator.py
+├── __init__.py
+└── tests
+    ├── __init__.py
+    └── unit
+        ├── calculator_test.py
+        └── __init__.py
+</code></pre>
+
+<p>The convention when programming in Python is to gather your tests within a package called <code>tests</code>. As a sub-package, I created <code>unit</code>: this is a good practice as with real projects you will have to run other tests that unit tests.</p>
+
+<p>As a starting point, let us focus on the division operation only:</p>
+
+<pre><code class="language-python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import logging
+
+class CalculatorCore:
+   &quot;&quot;&quot;Basic calculation functions: +, -, * and /
+   For the moment, I deal only with &quot;/&quot; operation.
+   &quot;&quot;&quot;
+
+   def __init__(self):
+       pass
+
+   def check_operands_validity(self, *args):
+       for arg in args:
+           if not (isinstance(arg, float) or isinstance(arg, int)):
+               return False
+       return True
+
+   def divide_two_integer_or_float_numbers(self, dividend, divisor):
+       if self.check_operands_validity(dividend, divisor):
+           try:
+               a = dividend / divisor
+           except Exception as exception:
+               logging.error(exception)
+               raise           
+           else:
+               return a                          
+           return dividend / divisor
+       return 0
+
+
+if __name__ == '__main__':
+   calculator_core = CalculatorCore()
+   print(calculator_core.divide_two_integer_or_float_numbers(2,4))
+</code></pre>
+
+<p>Save the above code in <code>calculator.py</code> module.</p>
+
+<p>Few comments about the above code:</p>
+
+<ul>
+<li>I chose to name the above class by <code>CalculatorCore</code> instead of <em>Calculator</em> because I will code the <code>CalculatorGUI</code> class on the next tutorial.</li>
+<li>Checking the parameters validity is done in a separate function called <code>__check_operands_validity()</code> to avoid code duplication in further operation.</li>
+</ul>
+
+<p>To test if everything is Ok with our class, you have to test its different code units. Let us start by testing the functionality of the main useful function which properly performs the division using Python’s built in <code>unittest</code> module:</p>
+
+<pre><code class="language-python">import unittest
+from calculator import CalculatorCore
+
+
+class TestCalculatorCore(unittest.TestCase):
+
+   def setUp(self):
+       self.calc = CalculatorCore()
+
+   def test_divide_two_integer_or_float_numbers_returns_correct_result(self):
+       self.assertEqual(3, self.calc.divide_two_integer_or_float_numbers(9,3))
+	   
+
+if __name__ == '__main__':
+   unittest.main()
+</code></pre>
+
+<p>You observe that after I imported the necessary things, I respected the <a href="#points">previous</a> rules. The only new element up to this point is the <a href="https://docs.python.org/3/library/unittest.html#unittest.TestCase.setUp"><code>setUp()</code></a> method which is there to instantiate once only the class <code>CalculatorCore</code>. Save the above code within <code>calculator_test.py</code>.</p>
+
+<p>In this test, I want to check if my function performs the division correctly, so I used <a href="https://docs.python.org/3/library/unittest.html#unittest.TestCase.assertEqual"><code>assertEqual()</code></a> for this purpose.</p>
+
+<p>The simplest way to run this test is to position yourself on the level of <code>calculator.py</code> package and execute this command:</p>
+
+<pre><code class="language-python">python -m tests/unit/calculator_test
+</code></pre>
+
+<p>Note how I wrote <code>calculator_test</code> without the <code>.py</code> extension.</p>
+
+<p>The output should be this:</p>
+
+<pre><code class="language-c">.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+</code></pre>
+
+<p>Our output says there was only one test function implemented &ldquo;<em>Run 1</em>&rdquo; and the test has passed &ldquo;<em>OK</em>&rdquo;. The &ldquo;.&rdquo; reflects the number of tests which <strong>passed</strong>.</p>
+
+<p>As a code tester, you must also check if your unit test fails when given a wrong input:</p>
+
+<pre><code class="language-python">def test_divide_two_integer_or_float_numbers_returns_error_when_divisor_is_null(self):
+       self.assertEqual(3, self.calculator_core.divide_two_integer_or_float_numbers(9,0))
+</code></pre>
+
+<p>Run again:</p>
+
+<pre><code class="language-python">python -m tests/unit/calculator_test
+</code></pre>
+
+<p>You will get this informative output which speaks by itself:</p>
+
+<pre><code class="language-python">.ERROR:root:integer division or modulo by zero
+E
+======================================================================
+ERROR: test_divide_two_integer_or_float_numbers_returns_error_when_divisor_is_null (__main__.TestCalculatorCore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;/home/begueradj/projects/calculator/tests/unit/calculator_test.py&quot;, line 14, in test_divide_two_integer_or_float_numbers_returns_error_when_divisor_is_null
+    self.assertEqual(3, self.calculator_core.divide_two_integer_or_float_numbers(9,0))
+  File &quot;calculator.py&quot;, line 21, in divide_two_integer_or_float_numbers
+    a = dividend / divisor
+ZeroDivisionError: integer division or modulo by zero
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (errors=1)
+
+</code></pre>
+
+<p>But you can do a better test: you can create a test function to check if the <code>ZeroDivisionError</code> is raised. This way you can get rid of the previous function test:</p>
+
+<pre><code class="language-python">import unittest
+from calculator import CalculatorCore
+
+
+class TestCalculatorCore(unittest.TestCase):
+
+   def setUp(self):
+       self.calculator_core = CalculatorCore()
+       
+   def test_divide_two_integer_or_float_numbers_returns_correct_result(self):
+       self.assertEqual(3, self.calculator_core.divide_two_integer_or_float_numbers(9,3))   
+    
+   def test_divide_two_integer_or_float_numbers_raises_exception_when_divisor_is_zero(self):
+       self.assertRaises(ZeroDivisionError, self.calculator_core.divide_two_integer_or_float_numbers, 2, 0)
+     
+
+if __name__ == '__main__':
+   unittest.main()
+</code></pre>
+
+<p>Both test pass now and you can see the exception confirmation:</p>
+
+<pre><code class="language-python">ERROR:root:integer division or modulo by zero
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+OK
+</code></pre>
+
+<p>The question you may ask at this stage is whether or not there is nothing else to test. Luckily there is a good (but not enough) criteria to answer to this question: it is the notion of code coverage. For this purpose, there is a tool called <code>coverage.py</code> which you can install as follows:</p>
+
+<pre><code class="language-python">pip install coverage
+</code></pre>
+
+<p>You will get a Terminal output similar to this one:</p>
+
+<pre><code>Collecting coverage
+  Downloading coverage-4.3.4-cp35-cp35m-manylinux1_x86_64.whl (191kB)
+    100% |████████████████████████████████| 194kB 1.7MB/s 
+Installing collected packages: coverage
+Successfully installed coverage-4.3.4
+</code></pre>
+
+<p>Let us see the code coverage of our program:</p>
+
+<pre><code class="language-python">coverage report -m
+</code></pre>
+
+<p>It says that only 73% of our code is tested:</p>
+
+<pre><code class="language-python">Name            Stmts   Miss  Cover   Missing
+---------------------------------------------
+calculator.py      22      6    73%   15, 22-24, 27-28
+</code></pre>
+
+<p>As a thumb of rule, code coverage must not be lower than <strong>80%</strong>. So a closer look to our program shows we did not test <code>check_operands_validity()</code> function. Let us do it:</p>
+
+<pre><code class="language-python">import unittest
+from calculator import CalculatorCore
+
+
+class TestCalculatorCore(unittest.TestCase):
+
+   def setUp(self):
+       self.calculator_core = CalculatorCore()
+
+   def test_divide_two_integer_or_float_numbers_returns_correct_result(self):
+       self.assertEqual(3, self.calculator_core.divide_two_integer_or_float_numbers(9,3))
+   
+    
+   def test_divide_two_integer_or_float_numbers_raises_exception_when_divisor_is_zero(self):
+       self.assertRaises(ZeroDivisionError, self.calculator_core.divide_two_integer_or_float_numbers, 2, 0)
+   
+   def test_check_operands_validity_returns_false_if_parameters_is_character(self):
+       self.assertFalse(self.calculator_core.check_operands_validity('b'))   
+      
+
+if __name__ == '__main__':
+   unittest.main()
+</code></pre>
+
+<p><a name="usefulness"></a></p>
+
+<h3 id="what-are-unit-tests-useful-for">What are unit tests useful for?</h3>
+
+<p>Errors in software can cost money, reputation damage, compromised systems by nefarious users who succeed to exploit your application’s flaws, or simply lead to people death. Unit tests are not a magic wand to eliminate once for all those errors, but it helps to significantly reduce them.</p>
+
+<p>If you are drawn to code many unit tests for a given function so that to cover all its possible scenarios then this means your function is not good and you have to shrink it down to smaller code units (functions) with fine grained responsibilities. A function is there to do one thing only: remember of this principle and it will save your life.
+<a name="tools"></a></p>
+
+<h3 id="which-tools-to-use">Which tools to use?</h3>
+
+<p>Testing is such important that it spawned a long list of testing tools in different programming languages: <strong>TestOOB</strong> , <strong>tox</strong>, <strong>TestGears</strong> are some of the good ones. Howeve, my favorite tool is <strong>Nose</strong>. Which one you should use is a matter of personal taste.
+<a name="antipatterns"></a></p>
+
+<h3 id="anti-patterns">Anti patterns</h3>
+
+<ul>
+<li><p>One of the highly ranked tutorials on this subject ranked by Google teaches you bad practices: for example, the author named <em>test_primes.py</em>. If you test your code using a tool like <em>Nose</em> then nothing will work because Nose identifies the test files by looking for files which suffix is <strong><em>_test</em></strong>. If the author respected the <strong>PEP 8</strong> standard, he would not be disappointed when using <em>Nose</em>.</p></li>
+
+<li><p>The same author injects several input values for one unique test. This is a bad practice because  as soon as one assertion fails, the rest are skipped. The author should use  <code>subTest()</code> function instead.</p></li>
+</ul>
+
+<p><a name="conclusion"></a></p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Unit tests are a fundamental concept to grasp in that they help to reduce the attack surface and bugs of your applications. I did not cover the <em>doctest</em> subject here because I simply do not like it, do not use it professionally and more importantly it does not add a value to what I already do using <em>unittest</em>, <em>nose</em> and <em>mock</em> frameworks (yeah, we will see mock in the coming tutorial and in the right moment).</p>
+
+<p>The best you can read about unit testing is the famous <em>The Art of Unit Testing</em> by <em>Roy Osherove</em>. The examples provided in this book, however, are in C#. As an exercise, you can complete the program of today with the remaining mathematical operations and design their corresponding unit tests before we continue this tutorial.</p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://www.begueradj.com/post/opencv-ubuntu16/" data-toggle="tooltip" data-placement="top" title="Installing OpenCV 3.2.0 for Python 3.5.2 on Ubuntu 16.04.2 LTS">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://www.begueradj.com/post/saya-idiom/" data-toggle="tooltip" data-placement="top" title="tkinter: the SaYa idiom">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/begueradj" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/8752798/begueradj" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Billal Begueradj
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://www.begueradj.com/js/main.js"></script>
+<script src="https://www.begueradj.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://www.begueradj.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

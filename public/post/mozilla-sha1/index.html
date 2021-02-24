@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Mozilla beheads SHA-1 - Begueradj</title>
+  <meta property="og:title" content="Mozilla beheads SHA-1" />
+  <meta name="twitter:title" content="Mozilla beheads SHA-1" />
+  <meta name="description" content="You have heard of SHA-1 deprecation since 2012. Mozilla finally confirms this is not a joke.
+May be you are tired of hearing over and over again about SHA-1 deprecation since 2012 when Bruce Schneier announced that collision attacks may be cost around $700k to perform by 2015, which was the year where the first practical full-on collision attack was lead out by researchers who predicted a costless real world attack may occur on 2018.">
+  <meta property="og:description" content="You have heard of SHA-1 deprecation since 2012. Mozilla finally confirms this is not a joke.
+May be you are tired of hearing over and over again about SHA-1 deprecation since 2012 when Bruce Schneier announced that collision attacks may be cost around $700k to perform by 2015, which was the year where the first practical full-on collision attack was lead out by researchers who predicted a costless real world attack may occur on 2018.">
+  <meta name="twitter:description" content="You have heard of SHA-1 deprecation since 2012. Mozilla finally confirms this is not a joke.
+May be you are tired of hearing over and over again about SHA-1 deprecation since 2012 when Bruce Schneier …">
+  <meta name="author" content="Billal Begueradj"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Begueradj",
+    
+    "url": "https://www.begueradj.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https://www.begueradj.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://www.begueradj.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https://www.begueradj.com/post/mozilla-sha1/",
+          "name": "Mozilla beheads s h a 1"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Billal Begueradj"
+  },
+  "headline": "Mozilla beheads SHA-1",
+  "description" : "You have heard of SHA-1 deprecation since 2012. Mozilla finally confirms this is not a joke.
+May be you are tired of hearing over and over again about SHA-1 deprecation since 2012 when Bruce Schneier announced that collision attacks may be cost around $700k to perform by 2015, which was the year where the first practical full-on collision attack was lead out by researchers who predicted a costless real world attack may occur on 2018.",
+  "inLanguage" : "en",
+  "wordCount": 284,
+  "datePublished" : "2017-01-17T12:33:21",
+  "dateModified" : "2017-01-17T12:33:21",
+  "image" : "https://www.begueradj.com/begueradj.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https://www.begueradj.com/post/mozilla-sha1/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https://www.begueradj.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https://www.begueradj.com/begueradj.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Mozilla beheads SHA-1" />
+<meta property="og:description" content="You have heard of SHA-1 deprecation since 2012. Mozilla finally confirms this is not a joke.
+May be you are tired of hearing over and over again about SHA-1 deprecation since 2012 when Bruce Schneier announced that collision attacks may be cost around $700k to perform by 2015, which was the year where the first practical full-on collision attack was lead out by researchers who predicted a costless real world attack may occur on 2018.">
+<meta property="og:image" content="https://www.begueradj.com/begueradj.png" />
+<meta property="og:url" content="https://www.begueradj.com/post/mozilla-sha1/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Begueradj" />
+  <meta name="twitter:title" content="Mozilla beheads SHA-1" />
+  <meta name="twitter:description" content="You have heard of SHA-1 deprecation since 2012. Mozilla finally confirms this is not a joke.
+May be you are tired of hearing over and over again about SHA-1 deprecation since 2012 when Bruce Schneier …">
+  <meta name="twitter:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://www.begueradj.com/begueradj.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://www.begueradj.com/post/mozilla-sha1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Begueradj" />
+
+  <meta name="generator" content="Hugo 0.53" />
+  <link rel="alternate" href="https://www.begueradj.com/index.xml" type="application/rss+xml" title="Begueradj">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.begueradj.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://www.begueradj.com/css/highlight.min.css" /><link rel="stylesheet" href="https://www.begueradj.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.begueradj.com">Begueradj</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Categories" href="/categories">Categories</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Begueradj" href="https://www.begueradj.com">
+            <img class="avatar-img" src="https://www.begueradj.com/begueradj.png" alt="Begueradj" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Mozilla beheads SHA-1</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 17, 2017
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;284&nbsp;words
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Billal Begueradj
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>You have heard of SHA-1 deprecation since 2012. Mozilla finally confirms this is not a joke.</p>
+
+<p>May be you are tired of hearing over and over again about SHA-1 deprecation since 2012 when Bruce Schneier <a href="https://www.schneier.com/blog/archives/2012/10/when_will_we_se.html">announced</a> that collision attacks may be cost around $700k to perform by 2015, which was the year where the first practical full-on collision attack was lead  out by <a href="https://sites.google.com/site/itstheshappening/">researchers</a> who predicted a costless real world attack may occur on 2018.</p>
+
+<p>Since that, Google, Microsoft and browsers manufacturers have raced the migration from SHA-1 to SHA-2. On last Tuesday, Mozilla gave the pace for this rush by being the first to display the warning <em>Untrusted Connection</em> on its Firefox browser to users visiting a website which SSL/TLS certificate is signed by SHA-1 instead of SHA-256.</p>
+
+<p>Now you may think this paranoia makes no sens as no real world attacks exploiting this technique are known by today. My answer is that lack of paranoia is a synonym of unconsciousness: publicly, there are no known attacks, that is true, but under the hoods who knows? Also, history teaches us how MD5 which is more prone to collision attacks was equivalently used in cyber espionnage attacks against Iran through the famous <a href="https://en.wikipedia.org/wiki/Flame_(malware)">Flame</a> malware.</p>
+
+<p>The SSL/TLS certificate installed for my website uses SHA-2 as this Python script says:</p>
+
+<pre><code class="language-python">import os
+os.system('openssl s_client -connect www.begueradj.com:443 &lt; /dev/null 2&gt;/dev/null\
+          | openssl x509 -text -in /dev/stdin | grep &quot;Signature Algorithm&quot;')
+</code></pre>
+
+<p>Output:</p>
+
+<pre><code class="language-python">Signature Algorithm: sha256WithRSAEncryption
+Signature Algorithm: sha256WithRSAEncryption
+
+</code></pre>
+
+<p>I just wonder how much this migration would cost as, in real life, SHA-1 underpins around <a href="https://www.venafi.com/blog/deprecation-denial-why-are-35-of-websites-still-using-sha-1">35%</a> of the digital certificates existing today resulting without mentioning the nightmares engineers are enduring regarding their unsupported applications or hardware  reconfigurations to perform.</p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+          
+            <li class="next">
+              <a href="https://www.begueradj.com/post/javascript-malware/" data-toggle="tooltip" data-placement="top" title="JavaScript malware">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/begueradj" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/8752798/begueradj" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Billal Begueradj
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://www.begueradj.com/js/main.js"></script>
+<script src="https://www.begueradj.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://www.begueradj.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

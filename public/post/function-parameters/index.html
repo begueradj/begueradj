@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Do not make a direct use of function parameters - Begueradj</title>
+  <meta property="og:title" content="Do not make a direct use of function parameters" />
+  <meta name="twitter:title" content="Do not make a direct use of function parameters" />
+  <meta name="description" content="Today, I have answered a question on Code Review website. The OP’s code sample itself was simple, but a user commented my answer stating that he never heard about function’s parameters should not be used directly.
+Following my answer to this question, I wrote this: &ldquo;Whatever the programming language you use, do not use the parameters inside your function&rdquo; and I explained what I meant:
+def my_function(param): par = param # Now work with &quot;par&quot; instead of &quot;param&quot;  A user was curious about the last section of my thread and commented: &ldquo;Is your point on &lsquo;do not use function params directly, no matter what language&rsquo; (paraphrased) definitely correct?">
+  <meta property="og:description" content="Today, I have answered a question on Code Review website. The OP’s code sample itself was simple, but a user commented my answer stating that he never heard about function’s parameters should not be used directly.
+Following my answer to this question, I wrote this: &ldquo;Whatever the programming language you use, do not use the parameters inside your function&rdquo; and I explained what I meant:
+def my_function(param): par = param # Now work with &quot;par&quot; instead of &quot;param&quot;  A user was curious about the last section of my thread and commented: &ldquo;Is your point on &lsquo;do not use function params directly, no matter what language&rsquo; (paraphrased) definitely correct?">
+  <meta name="twitter:description" content="Today, I have answered a question on Code Review website. The OP’s code sample itself was simple, but a user commented my answer stating that he never heard about function’s parameters should not be …">
+  <meta name="author" content="Billal Begueradj"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Begueradj",
+    
+    "url": "https://www.begueradj.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https://www.begueradj.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://www.begueradj.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https://www.begueradj.com/post/function-parameters/",
+          "name": "Do not make a direct use of function parameters"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Billal Begueradj"
+  },
+  "headline": "Do not make a direct use of function parameters",
+  "description" : "Today, I have answered a question on Code Review website. The OP’s code sample itself was simple, but a user commented my answer stating that he never heard about function’s parameters should not be used directly.
+Following my answer to this question, I wrote this: &amp;ldquo;Whatever the programming language you use, do not use the parameters inside your function&amp;rdquo; and I explained what I meant:
+def my_function(param): par = param # Now work with &amp;quot;par&amp;quot; instead of &amp;quot;param&amp;quot;  A user was curious about the last section of my thread and commented: &amp;ldquo;Is your point on &amp;lsquo;do not use function params directly, no matter what language&amp;rsquo; (paraphrased) definitely correct?",
+  "inLanguage" : "en",
+  "wordCount": 669,
+  "datePublished" : "2017-09-04T12:33:21",
+  "dateModified" : "2017-09-04T12:33:21",
+  "image" : "https://www.begueradj.com/begueradj.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https://www.begueradj.com/post/function-parameters/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https://www.begueradj.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https://www.begueradj.com/begueradj.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Do not make a direct use of function parameters" />
+<meta property="og:description" content="Today, I have answered a question on Code Review website. The OP’s code sample itself was simple, but a user commented my answer stating that he never heard about function’s parameters should not be used directly.
+Following my answer to this question, I wrote this: &ldquo;Whatever the programming language you use, do not use the parameters inside your function&rdquo; and I explained what I meant:
+def my_function(param): par = param # Now work with &quot;par&quot; instead of &quot;param&quot;  A user was curious about the last section of my thread and commented: &ldquo;Is your point on &lsquo;do not use function params directly, no matter what language&rsquo; (paraphrased) definitely correct?">
+<meta property="og:image" content="https://www.begueradj.com/begueradj.png" />
+<meta property="og:url" content="https://www.begueradj.com/post/function-parameters/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Begueradj" />
+  <meta name="twitter:title" content="Do not make a direct use of function parameters" />
+  <meta name="twitter:description" content="Today, I have answered a question on Code Review website. The OP’s code sample itself was simple, but a user commented my answer stating that he never heard about function’s parameters should not be …">
+  <meta name="twitter:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://www.begueradj.com/begueradj.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://www.begueradj.com/post/function-parameters/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Begueradj" />
+
+  <meta name="generator" content="Hugo 0.53" />
+  <link rel="alternate" href="https://www.begueradj.com/index.xml" type="application/rss+xml" title="Begueradj">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.begueradj.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://www.begueradj.com/css/highlight.min.css" /><link rel="stylesheet" href="https://www.begueradj.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.begueradj.com">Begueradj</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Categories" href="/categories">Categories</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Begueradj" href="https://www.begueradj.com">
+            <img class="avatar-img" src="https://www.begueradj.com/begueradj.png" alt="Begueradj" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Do not make a direct use of function parameters</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on September 4, 2017
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;669&nbsp;words
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Billal Begueradj
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Today, I have answered a  question on Code Review website. The OP’s code sample itself was simple, but a user commented my answer stating that he never heard about function’s parameters should not be used directly.</p>
+
+<p>Following my answer to <a href="https://codereview.stackexchange.com/questions/174763/what-is-an-idiomatic-way-to-write-if-a-if-b-if-a-or-b-else">this question</a>, I wrote this: &ldquo;<em>Whatever the programming language you use, do not use the parameters inside your function</em>&rdquo; and I explained what I meant:</p>
+
+<pre><code class="language-python">def my_function(param):
+   par = param
+   # Now work with &quot;par&quot; instead of &quot;param&quot;
+</code></pre>
+
+<p>A user was curious about the last section of my thread and commented: &ldquo;<em>Is your point on &lsquo;do not use function params directly, no matter what language&rsquo; (paraphrased) definitely correct? I&rsquo;m not doubting you, just haven&rsquo;t seen this before with Python</em>&rdquo;.</p>
+
+<p>Of course, with the low reputation I have on that website, I could not  respond to the comments in question without justifying my argumentation with a more trusted and official resource. This has been hard for me to remember where I exactly read this information. Actually this is even harder to justify now that I do not see, AFAIK, where this is written other than in a singe book that made my day.</p>
+
+<p>The book in question is called: &ldquo;<strong>Code Complete: A Practical Handbook of Software Construction</strong>*&ldquo;. On its Chapter 7, section 7.5, <em>Steve McConnell</em> has written: <strong>Don’t use routine parameters as working variables</strong> It’s dangerous to use the parameters passed to a routine as working variables. Use local variables instead*. The author has provided a Java sample code similar to the one of my answer:</p>
+
+<pre><code class="language-java"> int Sample( int inputVal ) {
+    inputVal = inputVal * CurrentMultiplier( inputVal );
+    inputVal = inputVal + CurrentAdder( inputVal );
+    ...
+   return inputVal;
+}
+</code></pre>
+
+<p>And I wanted to share the experience and text of the author about it:
+&gt;In this code fragment, inputVal is misleading because by the time execution reaches the last line, inputVal no longer contains the input value; it contains a computed value based in part on the input value, and it is therefore misnamed. If you later need to modify the routine to use the original input value in some other place, you’ll probably use inputVal and assume that it contains the original input value when it actually doesn&rsquo;t.</p>
+
+<p>And the solution provided in <em>Complete Code</em> is exactly what my memory reproduced through my answer:</p>
+
+<pre><code class="language-java"> int Sample( int inputVal ) {
+    int workingVal = inputVal;
+    workingVal = workingVal * CurrentMultiplier( workingVal );
+    workingVal = workingVal + CurrentAdder( workingVal );
+	...
+   return workingVal;
+}
+</code></pre>
+
+<p>The author wrote a side note in which he stated this gives you the advantage of making use of <em>inputVal</em> if needed within the above function’s body, or elsewhere in the program. The author adds:</p>
+
+<ul>
+<li>Introducing the new variable <em>workingVal</em> clarifies the role of <em>inputVal</em> and eliminates the chance of erroneously using <em>inputVal</em> at the wrong time.</li>
+<li>Assigning the input value to a working variable emphasizes where the value comes from.</li>
+</ul>
+
+<p>If you  still are not convinced of the author’s experience and advice, let me share with you a practical must use case of this rule, by creating a primitive tkinter based GUI that disaplays a simple button:</p>
+
+<pre><code class="language-python">import tkinter as tk
+
+class Demo(tk.Frame):
+   def __init__(self, master):
+       tk.Frame.__init__(self, master)
+       self.create_widgets()
+       
+   def create_widgets(self):
+       self.button = tk.Button(master, text='Demo')
+       self.button.pack()
+
+if __name__ == '__main__':
+   root = tk.Tk()
+   d = Demo(root)
+   root.mainloop()
+</code></pre>
+
+<p>In the initalizer, I ignored by purpose our magic rule regarding the <code>master</code> parameter. The compiler triggers this exception: <code>NameError: name 'master' is not defined
+</code>.</p>
+
+<p>Let us re-write the same program and be compliant to our rule:</p>
+
+<pre><code class="language-python">import tkinter as tk
+
+class Demo(tk.Frame):
+   def __init__(self, master):
+       self.master = master
+       tk.Frame.__init__(self, self.master)
+       self.create_widgets()
+       
+   def create_widgets(self):
+       self.button = tk.Button(self.master, text='Demo')
+       self.button.pack()
+
+if __name__ == '__main__':
+   root = tk.Tk()
+   d = Demo(root)
+   root.mainloop()
+</code></pre>
+
+<p>Even if this situation is, maybe, not the best to explain the importance of this rule as it involves class variables, the rule is more practical than it seems. And for sure you can find out many other practical situations where this rule must be considered and respected.</p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://www.begueradj.com/post/tkinter-best-practices/" data-toggle="tooltip" data-placement="top" title="Tkinter best practices">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://www.begueradj.com/post/selenium/" data-toggle="tooltip" data-placement="top" title="Installing Selenium drivers on Ubuntu">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/begueradj" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/8752798/begueradj" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Billal Begueradj
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://www.begueradj.com/js/main.js"></script>
+<script src="https://www.begueradj.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://www.begueradj.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Cryptojacking: cryptography in service of the Devil - Begueradj</title>
+  <meta property="og:title" content="Cryptojacking: cryptography in service of the Devil" />
+  <meta name="twitter:title" content="Cryptojacking: cryptography in service of the Devil" />
+  <meta name="description" content="A new revenue stream has been implemented by the end of the last year. Maybe cryptojacking did not get yet the hype it deserves but it has been already widely used. Most Internet consumers are not aware of it though its intentions are far from being innocent. It may also generate inequalities among Internet users.
+Definition Cryptojacking is about using the user’s device processor, with or without his consent, to mine cryptocurrency when visiting a given webpage which is not necessarily compromised but can do that on purpose.">
+  <meta property="og:description" content="A new revenue stream has been implemented by the end of the last year. Maybe cryptojacking did not get yet the hype it deserves but it has been already widely used. Most Internet consumers are not aware of it though its intentions are far from being innocent. It may also generate inequalities among Internet users.
+Definition Cryptojacking is about using the user’s device processor, with or without his consent, to mine cryptocurrency when visiting a given webpage which is not necessarily compromised but can do that on purpose.">
+  <meta name="twitter:description" content="A new revenue stream has been implemented by the end of the last year. Maybe cryptojacking did not get yet the hype it deserves but it has been already widely used. Most Internet consumers are not …">
+  <meta name="author" content="Billal Begueradj"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Begueradj",
+    
+    "url": "https://www.begueradj.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https://www.begueradj.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://www.begueradj.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https://www.begueradj.com/post/cryptojacking/",
+          "name": "Cryptojacking cryptography in service of the devil"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Billal Begueradj"
+  },
+  "headline": "Cryptojacking: cryptography in service of the Devil",
+  "description" : "A new revenue stream has been implemented by the end of the last year. Maybe cryptojacking did not get yet the hype it deserves but it has been already widely used. Most Internet consumers are not aware of it though its intentions are far from being innocent. It may also generate inequalities among Internet users.
+Definition Cryptojacking is about using the user’s device processor, with or without his consent, to mine cryptocurrency when visiting a given webpage which is not necessarily compromised but can do that on purpose.",
+  "inLanguage" : "en",
+  "wordCount": 899,
+  "datePublished" : "2018-01-07T12:33:21",
+  "dateModified" : "2018-01-07T12:33:21",
+  "image" : "https://www.begueradj.com/begueradj.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https://www.begueradj.com/post/cryptojacking/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https://www.begueradj.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https://www.begueradj.com/begueradj.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Cryptojacking: cryptography in service of the Devil" />
+<meta property="og:description" content="A new revenue stream has been implemented by the end of the last year. Maybe cryptojacking did not get yet the hype it deserves but it has been already widely used. Most Internet consumers are not aware of it though its intentions are far from being innocent. It may also generate inequalities among Internet users.
+Definition Cryptojacking is about using the user’s device processor, with or without his consent, to mine cryptocurrency when visiting a given webpage which is not necessarily compromised but can do that on purpose.">
+<meta property="og:image" content="https://www.begueradj.com/begueradj.png" />
+<meta property="og:url" content="https://www.begueradj.com/post/cryptojacking/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Begueradj" />
+  <meta name="twitter:title" content="Cryptojacking: cryptography in service of the Devil" />
+  <meta name="twitter:description" content="A new revenue stream has been implemented by the end of the last year. Maybe cryptojacking did not get yet the hype it deserves but it has been already widely used. Most Internet consumers are not …">
+  <meta name="twitter:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://www.begueradj.com/begueradj.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://www.begueradj.com/post/cryptojacking/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Begueradj" />
+
+  <meta name="generator" content="Hugo 0.53" />
+  <link rel="alternate" href="https://www.begueradj.com/index.xml" type="application/rss+xml" title="Begueradj">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.begueradj.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://www.begueradj.com/css/highlight.min.css" /><link rel="stylesheet" href="https://www.begueradj.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.begueradj.com">Begueradj</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Categories" href="/categories">Categories</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Begueradj" href="https://www.begueradj.com">
+            <img class="avatar-img" src="https://www.begueradj.com/begueradj.png" alt="Begueradj" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Cryptojacking: cryptography in service of the Devil</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 7, 2018
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;5&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;899&nbsp;words
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Billal Begueradj
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>A new  revenue stream has been implemented by the end of the last year. Maybe cryptojacking did not get yet the hype it deserves but it has been  already widely used. Most Internet consumers are not aware of it though its intentions are far from being innocent. It may also generate inequalities among Internet users.</p>
+
+<h2 id="definition">Definition</h2>
+
+<p>Cryptojacking is about using the user’s device processor, with or without his consent, to mine cryptocurrency when visiting a given webpage which is not necessarily compromised but can do that on purpose. It starts instantly upon visiting a cryptocurrency mining webpage. In its most nefarious form, cryptojacking does not require permission or any other form of effort from the user to be run. In other words, cryptojacking consists in hijacking the user’s devices (computer, smartphone, tablet &hellip;etc) to pilfer digital profit.</p>
+
+<h2 id="background">Background</h2>
+
+<p>It all started on September 2017, when a company called Coinhive<sup><a href="#b1">1</a></sup>  devised a mining component for the Monero (coin equivalent in Esperanto)  cryptocurrency that a webpage can hide in a form of a JavaScript script that looks as follows:</p>
+
+<pre><code class="language-javascript">&lt;script src=&quot;https://coinhive.com/lib/coinhive.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+        var miner = new CoinHive.User('&lt;site-key&gt;', 'john-doe');
+        miner.start();
+&lt;/script&gt;
+</code></pre>
+
+<p>The motivation behind Coinhive’s product was to offer an alternative  income stream for websites to ads which suffer from their own security pitfalls. This company offers a  flexible JavaScript API to play with the mining component at will. Hence   PirateBay is the first website used this API to raise funds<sup><a href="#b2">2</a></sup>:<br/><br/>
+<em>As you may have noticed we are testing a Monero javascript miner. <br/>
+This is only a test. We really want to get rid of all the ads. But we also need enough money to keep the site running.<br/>
+Let us know what you think in the comments. Do you want ads or do you want to give away a few of your CPU cycles every time you visit the site?</em>
+<br/><br/>
+Personally, I see such an approach equivalent to when you ask someone the permission to rape him. That said, I remember I read somewhere else that most PirateBay users accepted an in-browser mining to reduce adds. And since that, copycats have been cropping up to claim funds raising or reducing adds. Nefarious attackers can mine digital money for themselves by compromising a given website to take advantage of its traffic<sup><a href="#b3">3</a></sup>. There is even a Google Chrome extension<sup><a href="#b4">4</a></sup> which is removed from the Web Store for mining cryptocurrency in the background without the knowledge and consent of its users.</p>
+
+<h2 id="pow-captcha">POW CAPTCHA</h2>
+
+<p>To prevent spamming activities, website provide a challenge response test in the form of CAPTCHA to be solve by the visitor to check if that is a human or a machine.  But nowadays, most probably you have already encountered a website which relies on the proof of work CAPCHA. The concept of POW CAPTCHA<sup><a href="#b5">5</a></sup>  consists in forcing your CPU to solve a mathematical puzzle in the form of a hashing algorithm for the Monero Blockchain.</p>
+
+<p>This is how POW CAPTCHA looks like:</p>
+
+<p><img src="/pow_captcha.gif" alt="POW CAPTCHA" /></p>
+
+<p>While this technique makes your surfing easier and flatters your laziness in that you do not need to solve the CAPTCHA manually by yourself, you pay the website by letting it exploit your CPU and raise your electrical bills. Of course, depending on the speed and power of your machine, you may wait more or less than other visitors to be able to surf on the website in question.</p>
+
+<h2 id="danger">Danger</h2>
+
+<p>This technique is more insidious than the most common malicious JavaScript attacks such as drive-by download ones which often lead to sneak nefarious software into the user’s machine. In practice, cryptojacking is mostly intentional and secretive.</p>
+
+<p>Running several cryptojacked webpages may have dramatic consequences emanating from an overwhelmed machine’s processor: that can range from interrupted work to damaging the hardware (as it is the case with the infamous  Android trojan called Loapi<sup><a href="#b6">6</a></sup>) passing by data loss or a glitch in an organization&rsquo;s network. There is a simpler yet effective impact to frequently land on cryptojacking webpages: that will increase your electric bills as the CPU of your machine is “forced” to work more.</p>
+
+<h2 id="prevention">Prevention</h2>
+
+<p>Ad blockers can protect against cryptojacking. There is an extension called No Coin for the Google Chrome users. The last version of Opera (50)<sup><a href="#b7">7</a></sup> ships with a built-in cryptojacking blocker. It is worth to mention that as soon as the user closes the tab of the cryptojacking webpage, the CPU cycles inherent to it and used for mining are freed (but this may not always the case.
+Although lot of scanners already block Coinhive cryptojacking and categorize it as malware, attackers can always find a way to circumvent them (using obfuscated code, for instance) or by  hosting their own mining intermediary for JavaScript components to call back to.</p>
+
+<h2 id="note">Note</h2>
+
+<p>POW CAPTCHA will prevent spamming activities because these later ones are done rather by computer botnet<sup><a href="#b8">8</a></sup>, so the attacker does not worry about how much CPU power is taken from the  machines under his control. On the other hand, cryptojacking compromises the browsing user experience, and maybe one day everybody will have to buy a more expensive computer in order to surf on the Internet, or have to pay more electrical bills to read news online instead of paying for the conventional membership. Definitely, given our nature as humans, cryptojacking may be a source to nourish inequality among Internet consumers.</p>
+
+<hr />
+
+<p><sup><a name="b1"><sup>1</sup> </a>coinhive.com</sup><br/>
+<sup><a name="b2"><sup>2</sup> </a><a href="https://thepiratebay.org/blog">https://thepiratebay.org/blog</a></sup><br/>
+<sup><a name="b3"><sup>3</sup> </a><a href="https://www.washingtonpost.com/news/the-switch/wp/2017/10/13/hackers-have-turned-politifacts-website-into-a-trap-for-your-pc/">https://www.washingtonpost.com/news/the-switch/wp/2017/10/13/hackers-have-turned-politifacts-website-into-a-trap-for-your-pc/</a></sup><br/>
+<sup><a name="b4"><sup>4</sup> </a><a href="https://gadgets.ndtv.com/apps/news/archive-poster-google-chrome-extension-cryptocurrency-mining-1794930">https://gadgets.ndtv.com/apps/news/archive-poster-google-chrome-extension-cryptocurrency-mining-1794930</a></sup><br/>
+<sup><a name="b5"><sup>5</sup> </a><a href="https://www.cs.utexas.edu/~seang/blog/proof-of-work-captcha.html">https://www.cs.utexas.edu/~seang/blog/proof-of-work-captcha.html</a></sup><br/>
+<sup><a name="b6"><sup>6</sup> </a><a href="https://www.kaspersky.com/blog/loapi-trojan/20510/">https://www.kaspersky.com/blog/loapi-trojan/20510/</a></sup><br/>
+<sup><a name="b7"><sup>7</sup> </a><a href="https://techcrunch.com/2018/01/03/opera-now-protects-you-from-cryptojacking-attacks/">https://techcrunch.com/2018/01/03/opera-now-protects-you-from-cryptojacking-attacks/</a></sup><br/>
+<sup><a name="b8"><sup>8</sup> </a><a href="https://news.ycombinator.com/item?id=7944540">https://news.ycombinator.com/item?id=7944540</a></sup><br/></p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://www.begueradj.com/post/simplified-vigenere-python/" data-toggle="tooltip" data-placement="top" title="Vigenère cipher simplified implementation">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://www.begueradj.com/post/python-decorators/" data-toggle="tooltip" data-placement="top" title="Python decorators">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/begueradj" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/8752798/begueradj" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Billal Begueradj
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://www.begueradj.com/js/main.js"></script>
+<script src="https://www.begueradj.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://www.begueradj.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Python decorators - Begueradj</title>
+  <meta property="og:title" content="Python decorators" />
+  <meta name="twitter:title" content="Python decorators" />
+  <meta name="description" content="What are the origins and goals of Python decorators? How to implement them and why are they useful?
+Introduction Even when dealing with scientific and technical subjects, your subjectivity rules over you. I mean, each person has her own style in learning and explaining ideas. This subjective aspect is shaped not only by your intellectual capacities but more importantly by your personality. By personality, I mean how you see and interpret things.">
+  <meta property="og:description" content="What are the origins and goals of Python decorators? How to implement them and why are they useful?
+Introduction Even when dealing with scientific and technical subjects, your subjectivity rules over you. I mean, each person has her own style in learning and explaining ideas. This subjective aspect is shaped not only by your intellectual capacities but more importantly by your personality. By personality, I mean how you see and interpret things.">
+  <meta name="twitter:description" content="What are the origins and goals of Python decorators? How to implement them and why are they useful?
+Introduction Even when dealing with scientific and technical subjects, your subjectivity rules over …">
+  <meta name="author" content="Billal Begueradj"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Begueradj",
+    
+    "url": "https://www.begueradj.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https://www.begueradj.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://www.begueradj.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https://www.begueradj.com/post/python-decorators/",
+          "name": "Python decorators"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Billal Begueradj"
+  },
+  "headline": "Python decorators",
+  "description" : "What are the origins and goals of Python decorators? How to implement them and why are they useful?
+Introduction Even when dealing with scientific and technical subjects, your subjectivity rules over you. I mean, each person has her own style in learning and explaining ideas. This subjective aspect is shaped not only by your intellectual capacities but more importantly by your personality. By personality, I mean how you see and interpret things.",
+  "inLanguage" : "en",
+  "wordCount": 2962,
+  "datePublished" : "2018-02-18T12:33:21",
+  "dateModified" : "2018-02-18T12:33:21",
+  "image" : "https://www.begueradj.com/begueradj.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https://www.begueradj.com/post/python-decorators/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https://www.begueradj.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https://www.begueradj.com/begueradj.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Python decorators" />
+<meta property="og:description" content="What are the origins and goals of Python decorators? How to implement them and why are they useful?
+Introduction Even when dealing with scientific and technical subjects, your subjectivity rules over you. I mean, each person has her own style in learning and explaining ideas. This subjective aspect is shaped not only by your intellectual capacities but more importantly by your personality. By personality, I mean how you see and interpret things.">
+<meta property="og:image" content="https://www.begueradj.com/begueradj.png" />
+<meta property="og:url" content="https://www.begueradj.com/post/python-decorators/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Begueradj" />
+  <meta name="twitter:title" content="Python decorators" />
+  <meta name="twitter:description" content="What are the origins and goals of Python decorators? How to implement them and why are they useful?
+Introduction Even when dealing with scientific and technical subjects, your subjectivity rules over …">
+  <meta name="twitter:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://www.begueradj.com/begueradj.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://www.begueradj.com/post/python-decorators/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Begueradj" />
+
+  <meta name="generator" content="Hugo 0.53" />
+  <link rel="alternate" href="https://www.begueradj.com/index.xml" type="application/rss+xml" title="Begueradj">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.begueradj.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://www.begueradj.com/css/highlight.min.css" /><link rel="stylesheet" href="https://www.begueradj.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.begueradj.com">Begueradj</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Categories" href="/categories">Categories</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Begueradj" href="https://www.begueradj.com">
+            <img class="avatar-img" src="https://www.begueradj.com/begueradj.png" alt="Begueradj" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Python decorators</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on February 18, 2018
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;14&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;2962&nbsp;words
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Billal Begueradj
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>What are the origins and goals of Python decorators? How to implement them and why are they useful?</p>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>Even when dealing with scientific and technical subjects, your subjectivity rules over you. I mean, each person has her own style in learning and explaining ideas. This subjective aspect is shaped not only by your intellectual capacities but more importantly by your personality. By personality, I mean how you see and interpret things. This subjectivity dimension highly impacts your learning curve. This is what you may already have observed in yourself. This is also what the Swiss development psychologist Jean Piaget detailed in his theory of cognitive development. So maybe the best book dealing with Python decorators would not fit you. Thus, you understand the reason behind this an other, yet different, contribution on Python decorators that hopefully will fit you.</p>
+
+<p>The first thing I would like to start with is that Python decorators have nothing to do with the decorator design pattern described by the <em>Gand of Four</em> in their famous and now classic book <em>Design Patterns: Elements of Reusable Object-Oriented Software</em>.</p>
+
+<h3 id="back-to-2005">Back to 2005</h3>
+
+<p>If you are like me when I have to learn new technical notions, you may ask yourself about the origin and goals of Python decorators. As you may already have read elsewhere, Python decorators were first implemented in  Python2.4 when introducing <code>@classmethod</code> and <code>@staticmethod</code> built-ins.</p>
+
+<p>I read an article published on 2005 by the author of Python Web Server Gateway Interface specification (PEP 333) in which he said: <em>as a relatively new feature, their full possibilities have not yet been explored, and perhaps the most exciting uses haven&rsquo;t even been invented yet</em>.</p>
+
+<p>As you can see, it is not always evident to see the importance of a new concept, especially if you are not the one who conceived it.  Philip Edy had hard time to find the necessity to use decorators. To highlight the 2 reasons as why you need to implement decorators, he invoked a short code snippet without a decorator:</p>
+
+<pre><code class="language-python">import atexit
+
+def goodbye():
+   print &quot;Goodbye, world!&quot;
+
+atexit.register(goodbye)
+</code></pre>
+
+<p>and then with a decorator version:</p>
+
+<pre><code class="language-python">import atexit
+
+@atexit.register
+def goodbye():
+   print &quot;Goodbye, world!&quot;
+</code></pre>
+
+<p>While I agree with the first advantage, I do not agree with the last one in that repeating the function name in this situation does not go against the <strong>DRY</strong> principle you have learned in <em>The Pragmatic Programmer: From Journeyman to Master</em>. The DRY principle is rather violated in <a href="http://stackoverflow.com/questions/12179271/python-classmethod-and-staticmethod-for-beginner/12179752#12179752">this</a> highly rated answer I randomly picked from StackOverflow:</p>
+
+<pre><code class="language-python">class Date(object):
+
+    day = 0
+    month = 0
+    year = 0
+
+    def __init__(self, day=0, month=0, year=0):
+        self.day = day
+        self.month = month
+        self.year = year
+</code></pre>
+
+<p>This class is wrongly designed: You can see that the  information hold by both the class and instance variables are of the same nature. The class variables must be removed because each day is unique.  Not only this does not conform to DRY principle but it is also a confusing design.</p>
+
+<p>If I do not agree with Phillip Eby then what makes decorators a unique and useful Python feature? I will answer this question by the end of this article because you can not grasp the meaning of what I say without actually introducing what decorators are.</p>
+
+<h3 id="definition">Definition</h3>
+
+<p>Unfortunately, I see many resources making a parallel between decorators and Java annotations. I say unfortunately because the only common aspect between these 2 notions is the syntactic sugar line itself which looks exactly alike. Everything else is different:</p>
+
+<ul>
+<li>Java annotations have no effect on the method or class they decorate, unlike Python decorators which are functions able to modify the behavior (but not the definition) of other functions arbitrarily at runtime.</li>
+<li>Java annotations provide metadata to class or method while Python decorators take a function as an argument and return a function.</li>
+</ul>
+
+<p>I often read comments on other online Python communities complaining about the fact decorators are simple to use but difficult to implement. The other thing I hear is about the simplicity of implementing decorators if you develop in Python under the OOP perspective. So let us take some useful steps that will lead and help to understand what Python decorators are about.</p>
+
+<h1 id="python-functions">Python functions</h1>
+
+<p>Save the following simple Python function in a file called <code>hello.py</code>:</p>
+
+<pre><code class="language-python">def greet():
+   print('Hello')
+if __name__ == '__main__':
+   greet()
+</code></pre>
+
+<p>Running <code>python hello.py</code> will generate a bytecode which Python runtime loads to get interpreted by the virtual machine which then creates a function object to which the name <code>greet</code> is binded.</p>
+
+<h3 id="fco">FCO</h3>
+
+<p>I am not here to teach you what is a function. I suppose you already know that. But it is important to remember that in Python, all functions are CFO. But what is this weird term? Well, actually, many programming languages implement the notion of first-class functions (CFC). This means that in such programming languages you can, among other things, use functions as parameters as well as  return values which you can store in a variables. This useful concept was introduced by <em>Christopher Strachey</em>. But because everything in Python is an object (yes, including classes!), we rather need to use the acronym FCO instead of FCF. FCO sands for first-class objects.<br/><br/>
+If you do not believe that functions are objects in Python, add this line to the previous <code>hello.py</code> code:</p>
+
+<pre><code class="language-python">print(greet)
+</code></pre>
+
+<p>This will result in printing:</p>
+
+<pre><code class="language-python">&lt;function greet at 0x7fd2d1fb32f0&gt;
+</code></pre>
+
+<p>This output simply means that the virtual machine has allocated a memory address <code>0x7fd2d1fb32f0</code> for the object called <code>greet</code>.<br><br>
+A function can be passed as an argument to a function:</p>
+
+<pre><code class="language-python">def greet(function_name):
+   &quot;&quot;&quot;This functions takes as an argument an other function.
+   Only the function name is passed
+   &quot;&quot;&quot;
+   # Call to function_name and printing out the value it returns
+   print('Hello {} !'.format(function_name()))
+
+def name(fname = 'Jack'):
+   &quot;&quot;&quot;This function takes a named and optional argument with a default value.
+   It returns the passed argument.
+   Well, useless example, but this is just for illustration.
+   Once you understand the basics, you can code your own magical stuff.
+   &quot;&quot;&quot;
+   return fname
+if __name__ =='__main__':
+   greet(name)
+</code></pre>
+
+<p>The above example does not only show that we can pass a function as an argument to an other function:</p>
+
+<pre><code class="language-python">greet(name)
+</code></pre>
+
+<p>but it also shows that you can use a function as a return value to store in a variable:</p>
+
+<pre><code class="language-python">print('Hello {} !'.format(function_name()))
+</code></pre>
+
+<p>In case you are stubborn and still do not believe that functions in Python are first class objects then add this line to the previous program:</p>
+
+<pre><code class="language-python">print(greet.__class__)
+print(issubclass(greet.__class__, object))
+</code></pre>
+
+<p>The last line above will print <code>True</code> because the function <code>greet</code>, as all other objects in Python, inherits from the <code>object</code> baseclass.</p>
+
+<h3 id="nested-functions">Nested functions</h3>
+
+<p>Python allows you to define -and call- a function inside an other one. This feature is what is commonly called nested functions. So let us see nested functions in actions by saving the following program in a <code>email.py</code> file:</p>
+
+<pre><code class="language-python">import re
+
+def email(email_address):
+   &quot;&quot;&quot;This is an outer function.
+   It receives an arbitrary email address.
+   It delegates the validation check to is_valid() inner function
+   &quot;&quot;&quot;
+   def is_valid(email_address):
+       &quot;&quot;&quot;This is an inner function.
+       It has access to the variable of the enclosing scope
+       to check its validation.       
+       &quot;&quot;&quot;
+       ok = re.search(r'(^[a-zA-Z0-9\.\+_-]+)@[a-zA-Z].[a-zA-Z\.]+$', email_address)
+       return True if ok else False
+   #This will prints True or False
+   print(is_valid(email_address))
+
+# Main program
+if __name__ == '__main__':
+   email('begueradj@begueradj.com')
+</code></pre>
+
+<p>Note that you can nest your functions as deeply as you want as long as you respect variables scope. <br/>
+Dealing with nested functions, it is important to keep in mind the variables scope. If you need to modify the value of a variable enclosed within the namespace of an outer function and lays inside its inner function, then you must declare it with <code>nonlocal</code> keyword, otherwise the Python interpreter will create a variable local to the inner function:</p>
+
+<pre><code class="language-python">def outer():
+   x = 1
+   def inner():
+       nonlocal x #This means you want to access the x defined in outer()
+       x = 2
+   inner()
+   print('x = {}'.format(x)) #The value of x is no longer equal to 1
+   
+# Main program
+if __name__ == '__main__':
+   outer()
+</code></pre>
+
+<p>If you got a syntax error after running the above program, this means you used Python2.x while the keyword <code>nonlocal</code> is introduced in Python3.x. Do not confuse <code>nonlocal</code> with the <code>global</code> keyword which rather is used to reference variables define in the scope of a module.</p>
+
+<h1 id="closures">Closures</h1>
+
+<p>Let us turn back to our previous <code>email.py</code> to tweak it a little bit like follows:</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; import re
+&gt;&gt;&gt; def email(email_address):
+...    def is_valid(): #Changed only this
+...        ok = re.search(r'(^[a-zA-Z0-9\.\+_-]+)@[a-zA-Z].[a-zA-Z\.]+$', email_address)
+...        return True if ok else False
+...    return is_valid
+... 
+&gt;&gt;&gt; result = email('begueradj@begueradj.com')
+&gt;&gt;&gt; result()
+True
+&gt;&gt;&gt; del email
+&gt;&gt;&gt; result()
+True
+&gt;&gt;&gt; 
+
+</code></pre>
+
+<p>Do not you notice something weird? Well, actually there are two unexpected behaviors:</p>
+
+<ul>
+<li>The result of first call to <code>result()</code> is not expected because <code>email_address</code> is local to <code>email()</code>. This means any result of an operation made on <code>email_address</code> could no longer exist after <code>email()</code> is executed. But you clearly see this is not the case because <code>is_valid()</code> is called only after the return of <code>email()</code>.</li>
+<li>After deleting <code>email()</code> we still got information about the result of the operation done on its local variable <code>email_address</code>! Local variables are supposed to disappear after the execution of their enclosing scope! This is weird enough!</li>
+</ul>
+
+<p>Actually this is achieved thanks to a feature of Python called closures. A closure consists of a nested function must point to a variable which is local to the enclosing function which must return the nest function. I introduced closures here because they are extensively used for Python decorators.</p>
+
+<p>Maybe you can understand the Python shell better:</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; result.__closure__
+(&lt;cell at 0x7f80c224d7f8: str object at 0x7f80c04af228&gt;,)
+&gt;&gt;&gt; 
+</code></pre>
+
+<h1 id="decorators">Decorators</h1>
+
+<p>If you have understood the previous secions, you are already equiped to learn properly about the decorators:</p>
+
+<h3 id="definition-1">Definition</h3>
+
+<p>I see lot of resources misleading newbies by telling them that the decorator is that weird notation in the form of. Other resources give a more formal definition that may not be that easy for a beginner to understand. Albert Einstein once wrote (or said): <em>If you can&rsquo;t explain it to a six year old, you don&rsquo;t understand it yourself</em>. So let me define what is a decorator in plain English: a decorator is a function which takes an other function as an argument in order to modify its behavior. Yes, as simple as that.</p>
+
+<p>There are two formal definitions of decorators that maybe you want to learn about anyway. If this is your case then you have to know the first and almost instinctive formal definition commonly used to describe decorators is: <em>a decorator is a callable returning an other callable</em>. Do not be scared of the <em>callable</em> notion here. In fact, as in any other programming language you already know, you can call a function in Python; hence the adjective callable. More technically speaking, every object which implements the <code>__call__()</code> method is said to be a callable object.</p>
+
+<p>The second formal definition you can hear about elsewhere is: <em>decorators are a metaprogramming concept just like metaclasses</em>. Honestly, this is not the best definition to provide for a newbie. But I let you know that <em>metaprogramming</em> simply means that one (or more) function or class of your program tries to modify other pieces (function, class) of your code. For the <em>metaclass notion</em>, I am not going to describe it here, but I may write a simple tutorial about it if you ask me through a comment below.</p>
+
+<h3 id="example">Example</h3>
+
+<p>As with other things in your daily life, the best definition you can provide is done by giving an example:</p>
+
+<pre><code class="language-python">def decorator(decorated):
+   &quot;&quot;&quot;This decorator wraps a nested function to add
+   more functionality to the decorated() function.
+   &quot;&quot;&quot;
+   
+   def inner():
+       &quot;&quot;&quot;Here is modified the behavior of decorated()
+       This is achieved by adding functionality to it.
+       &quot;&quot;&quot;
+       print('Hello and welcome to my page.')
+       decorated()
+       print('I am of Algerian nationality living in Paris and born in a commune situated in Bejaia called Feraoun')
+       
+   return inner   
+    
+def decorated():
+   print('I am Billal BEGUERADJ.')
+   
+   
+# Main program goes here
+if __name__ == '__main__':
+   about = decorator(decorated)
+   about()
+</code></pre>
+
+<p>Yes, we have programmed our first decorator. The previous example respects the definition and principles of a decorator: the callable (function) <code>decorator()</code> takes an other callable I named <code>decorated()</code>, it uses a nested function which name is <code>inner()</code> and returns a callable (this later one). Does this remember you of closures? That is why I said previously that closures are extensively used to implement decorators.<br/><br/>
+The function <code>decorated()</code> is supposed to execute only this instruction: <code>print('I am Billal BEGUERADJ.')</code> but thanks to our decorator, we have decorated it to display a detailed self-representation.</p>
+
+<pre><code class="language-python">def decorated():
+   print('I am Billal BEGUERADJ.')
+   
+   
+# Main program goes here
+if __name__ == '__main__':
+   about = decorator(decorated)
+   about()
+</code></pre>
+
+<p>are equivalent to:</p>
+
+<pre><code class="language-python">@decorator   
+def decorated():
+   print('I am Billal BEGUERADJ.')
+   
+   
+# Main program goes here
+if __name__ == '__main__':
+   decorated()
+</code></pre>
+
+<p>I see many online tutorials teach you that <code>@decorator</code> is the decorator. That is very wrong. That line of code is what you may call <em>decoration notation</em> but it is not the decorator itself. I think the first advantage of decorators may be quite obvious: at least you reduced the size of your code (number of instructions) which thing is simply beneficial.</p>
+
+<h3 id="decorators-of-functions-with-arguments">Decorators of functions with arguments</h3>
+
+<p>The previous decorator is quite simple because the function it decorates takes no arguments. So how to decorate a function with parameters?<br/>Here is an example:</p>
+
+<pre><code class="language-python">import math
+
+def find_root(func):
+   &quot;&quot;&quot;This decorator adds functionality to get_root().
+   &quot;&quot;&quot;
+   
+   def inner(a):
+       &quot;&quot;&quot;The most important thing you have to do here is to pass
+       always the parameters of the callable object to your 
+       nested function.
+       &quot;&quot;&quot;
+       print('The root of {}: '.format(a))
+       try:           
+           return func(a)
+       except ValueError:
+           print('Opps ! Can not find the root of a negative value !')
+           pass
+		   
+   return inner
+
+# Decoration notation goes here
+@find_root
+def get_root(a):
+   return math.sqrt(a)
+   
+
+# Main program starts here
+if __name__ == '__main__':
+   get_root(-4)
+</code></pre>
+
+<p>As you may have noticed, the trick is easy to grasp: always insert the name of the function to be decorated without parameters or even parentheses. Then pass the parameters of the function to decorated to the decorator’s nested function. That is it.<br/><br/>
+Of course, you can incorporate all what I did in <code>inner()</code> into <code>get_root()</code>. For this specific example, you may think it is a matter of opinion. But when you will read below about the utility of decorators, you will change your mind.<br/><br/>
+Note that in case the function to decorate has an arbitrary number of parameters packed within a list or dictionary, you can use <code>*</code> and <code>**</code> notations to respectively unpack them:</p>
+
+<pre><code class="language-python">def decorator(decorated):
+    def nested(*args, **kwargs):
+        print(&quot;+ ----------------------- +&quot;)
+        return decorated(*args, **kwargs)
+		print(&quot;+ ----------------------- +&quot;)
+    return nested
+</code></pre>
+
+<h3 id="chaining-decorators">Chaining decorators</h3>
+
+<p>You can chain decorators. This means you can use multiple decorators to decorate the same function as you previously learned. To use such multiple decorated function, you can use this notation:</p>
+
+<pre><code class="language-python">@decorator1
+@decorator2
+@decorator3
+decorated_function(*args)
+</code></pre>
+
+<h1 id="decorators-and-oop">Decorators and OOP</h1>
+
+<p>Until now, you have seen, and hopefully, decorators in action. But you are likely to be asked by your employee to develop use object-oriented programming at your workplace. So how to implement decorators when you design the solution to your problem using classes?<br/><br/>
+Let me re-write the very first decorator example you learned previously under the umbrella of OOP:</p>
+
+<pre><code class="language-python">class Decorator(object):
+   def __init__(self, decorated):
+       self.decorated = decorated
+   def __call__(self):
+       print('Hello and welcome to my page.')
+       self.decorated()
+       print('I am of Algerian nationality living in Paris and born in a commune situated in Bejaia called Feraoun')
+
+@Decorator
+def decorated():
+   print('I am Billal BEGUERADJ')
+
+if __name__ == '__main__':
+   decorated()
+</code></pre>
+
+<p>To make the instances of a class callable, you need to use <code>__call__()</code>. To simplify things for you, think of <code>__call__()</code> as the equivalent of the nested function you learned from above examples.<br/>
+Most newbie developers say decorators are easier to implement using classes.</p>
+
+<h3 id="what-are-decorators-useful-for">What are decorators useful for?</h3>
+
+<p>Even if the example described above are very simply, there is one main area where you can not get ready of decorators: when you develop a framework. Everything else you read in books is primarily-based opinion.<br/><br/>
+When you develop a framework, it is useful to hide the inner implementations of the different functionalities you offer so that the user of your framework can focus in designing the solution to his actual problem. If you read about the architecture of Flask framework, you are already satisfied and surprised to be able to deal with client request so easily:</p>
+
+<pre><code class="language-python">from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+</code></pre>
+
+<p>But you can implement decorators for a large range of needs such as when you want to measure the performance of two versions of your code by calculating the time its takes to give me an output:</p>
+
+<pre><code class="language-python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# We need this module for time operations
+import time
+
+def duration(func):
+   &quot;&quot;&quot;You can use this decorator to calculate the time
+   a function takes to finish its execution.   
+   &quot;&quot;&quot;
+   def nested(*args, **kwargs):
+       &quot;&quot;&quot;This is the nested function in which
+       the operations are, properly speaking, done.
+       &quot;&quot;&quot;
+       # Save the starting time of the function
+       start = time.time()
+       # Execute the function
+       func(*args, **kwargs)
+       # Caclulate the difference between present time and the previous one.
+       since = time.time() - start
+       # Easy to read output goes here
+       print('+ --------------------- +')
+       print('{}() executed in {} ms'.format(func.__name__, int(since * 1000)))
+       print('+ --------------------- +')
+   return nested
+   
+@duration
+def greet(a):   
+   print('I just print my argument: {}'.format(a))
+
+# Main program starts here
+if __name__ == '__main__':
+   greet(2)
+</code></pre>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>Decorators are a flexible means to reuse code (compared to functions) and are more useful to interface functionalities for the users of your framework. You can google <em>PythonDecoratorLibrary</em> and you will land on a page providing many examples of decorators that you may reuse in your programs.
+Your comments are welcome.</p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://www.begueradj.com/post/cryptojacking/" data-toggle="tooltip" data-placement="top" title="Cryptojacking: cryptography in service of the Devil">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://www.begueradj.com/post/install-opencv-python3-ubuntu18/" data-toggle="tooltip" data-placement="top" title="How to install OpenCV 4.0 for Python3.6.5 on Ubuntu 18.04 LTS">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/begueradj" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/8752798/begueradj" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Billal Begueradj
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://www.begueradj.com/js/main.js"></script>
+<script src="https://www.begueradj.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://www.begueradj.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

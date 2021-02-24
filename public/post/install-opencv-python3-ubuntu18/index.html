@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>How to install OpenCV 4.0 for Python3.6.5 on Ubuntu 18.04 LTS - Begueradj</title>
+  <meta property="og:title" content="How to install OpenCV 4.0 for Python3.6.5 on Ubuntu 18.04 LTS" />
+  <meta name="twitter:title" content="How to install OpenCV 4.0 for Python3.6.5 on Ubuntu 18.04 LTS" />
+  <meta name="description" content="I know OpenCV 4.0.0 will rather be released on July 2018, but the installation procedure I describe here will not change. In fact, I already I installed and tested OpenCV 4.0.0-pre on Ubuntu 18.04 (to be continued soon)
+I want to share my own experience regarding this procedure. Whenever I tried this or that tutorial related to installing a recent OpenCV version for Python3.x, I stumble on errors which are not recovered by those tutorials.">
+  <meta property="og:description" content="I know OpenCV 4.0.0 will rather be released on July 2018, but the installation procedure I describe here will not change. In fact, I already I installed and tested OpenCV 4.0.0-pre on Ubuntu 18.04 (to be continued soon)
+I want to share my own experience regarding this procedure. Whenever I tried this or that tutorial related to installing a recent OpenCV version for Python3.x, I stumble on errors which are not recovered by those tutorials.">
+  <meta name="twitter:description" content="I know OpenCV 4.0.0 will rather be released on July 2018, but the installation procedure I describe here will not change. In fact, I already I installed and tested OpenCV 4.0.0-pre on Ubuntu 18.04 (to …">
+  <meta name="author" content="Billal Begueradj"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Begueradj",
+    
+    "url": "https://www.begueradj.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https://www.begueradj.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://www.begueradj.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https://www.begueradj.com/post/install-opencv-python3-ubuntu18/",
+          "name": "How to install open c v 4.0 for python3.6.5 on ubuntu 18.04 l t s"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Billal Begueradj"
+  },
+  "headline": "How to install OpenCV 4.0 for Python3.6.5 on Ubuntu 18.04 LTS",
+  "description" : "I know OpenCV 4.0.0 will rather be released on July 2018, but the installation procedure I describe here will not change. In fact, I already I installed and tested OpenCV 4.0.0-pre on Ubuntu 18.04 (to be continued soon)
+I want to share my own experience regarding this procedure. Whenever I tried this or that tutorial related to installing a recent OpenCV version for Python3.x, I stumble on errors which are not recovered by those tutorials.",
+  "inLanguage" : "en",
+  "wordCount": 892,
+  "datePublished" : "2018-06-01T12:33:21",
+  "dateModified" : "2018-06-01T12:33:21",
+  "image" : "https://www.begueradj.com/begueradj.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https://www.begueradj.com/post/install-opencv-python3-ubuntu18/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https://www.begueradj.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https://www.begueradj.com/begueradj.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="How to install OpenCV 4.0 for Python3.6.5 on Ubuntu 18.04 LTS" />
+<meta property="og:description" content="I know OpenCV 4.0.0 will rather be released on July 2018, but the installation procedure I describe here will not change. In fact, I already I installed and tested OpenCV 4.0.0-pre on Ubuntu 18.04 (to be continued soon)
+I want to share my own experience regarding this procedure. Whenever I tried this or that tutorial related to installing a recent OpenCV version for Python3.x, I stumble on errors which are not recovered by those tutorials.">
+<meta property="og:image" content="https://www.begueradj.com/begueradj.png" />
+<meta property="og:url" content="https://www.begueradj.com/post/install-opencv-python3-ubuntu18/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Begueradj" />
+  <meta name="twitter:title" content="How to install OpenCV 4.0 for Python3.6.5 on Ubuntu 18.04 LTS" />
+  <meta name="twitter:description" content="I know OpenCV 4.0.0 will rather be released on July 2018, but the installation procedure I describe here will not change. In fact, I already I installed and tested OpenCV 4.0.0-pre on Ubuntu 18.04 (to …">
+  <meta name="twitter:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://www.begueradj.com/begueradj.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://www.begueradj.com/post/install-opencv-python3-ubuntu18/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Begueradj" />
+
+  <meta name="generator" content="Hugo 0.53" />
+  <link rel="alternate" href="https://www.begueradj.com/index.xml" type="application/rss+xml" title="Begueradj">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.begueradj.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://www.begueradj.com/css/highlight.min.css" /><link rel="stylesheet" href="https://www.begueradj.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.begueradj.com">Begueradj</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Categories" href="/categories">Categories</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Begueradj" href="https://www.begueradj.com">
+            <img class="avatar-img" src="https://www.begueradj.com/begueradj.png" alt="Begueradj" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>How to install OpenCV 4.0 for Python3.6.5 on Ubuntu 18.04 LTS</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on June 1, 2018
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;5&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;892&nbsp;words
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Billal Begueradj
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>I know OpenCV 4.0.0 will rather be released on July 2018, but the installation procedure I describe here will not change. In fact, I already I installed and tested OpenCV 4.0.0-pre on Ubuntu 18.04 (to be continued soon)</p>
+
+<p>I want to share my own experience regarding this procedure. Whenever I tried this or that tutorial related to installing a recent OpenCV version for Python3.x, I stumble on errors which are not recovered by those tutorials. So all what I advice you to do is to follow the steps mentioned in the official documentation<sup><a href="#1">1</a></sup> take your time to inform yourself about what you are doing and be meticilous about the details<sup><a href="#2">2</a></sup></p>
+
+<p>Ubuntu 18.04 LTS ships with Python3.6 version, which is also the only default Python version available<sup><a href="#3">3</a></sup>. Obviously you do not need to install some other Python3.x version unless for a specific reason.</p>
+
+<p>As I said, all what you have to do is to reproduce the steps mentioned in the official documentation. But you will encounter few problems which all fall into the same category: the documentation refers to older libariries that are now renamed and upgraded. So whenever you try to install a given library and you get this error message <code>E: Unable to locate package some_package</code> then you have a short list of options to do respond to your issue:</p>
+
+<ol>
+<li>Run a custom search on Ubuntu Packages Search which will be helpful in most cases<sup><a href="#4">4</a></sup>.</li>
+<li>On Terminal, type <code>sudo apt-get install</code> followed by the libaray’s full or half name (start with the full name first) as written on the documentation, excluding the version numbering and press Tab for autocompletition or suggestions list from which you can easily guess what is the appropriate one.</li>
+<li>Google about it and do not hesitate to use online communities to ask.</li>
+<li>Last but not the least: do not even try to run <code>sudo apt-get install python-opencv</code>: this package is incomplete<sup><a href="#5">5</a></sup>.</li>
+</ol>
+
+<h4 id="building-opencv-from-source">Building OpenCV from source</h4>
+
+<p>Nothing beats installing a library from source, so let us follow the steps mentioned in the official documentation:</p>
+
+<h4 id="required-build-dependencies">Required build dependencies</h4>
+
+<pre><code class="language-cmd">sudo apt-get install cmake
+sudo apt-get install python3.6-dev
+sudo apt-get install python3-numpy
+</code></pre>
+
+<p>Note the documentation says <code>python-devel</code> but that is old, you should install <code>python3.6-dev</code> instead. Most packages suffixed by <code>-devel</code> are now re-named by <code>-dev</code> suffix. The truth is that it is always better to install Python related packages using pip which you can install by <code>sudo apt-get install python3-pip</code> and then install what you need as in this example <code>sudo pip3 install numpy</code> (note the difference when using <code>apt</code> above). But for the moment, let us continue with the Canonical instead of PyPI installation.</p>
+
+<p>Do not run this command:</p>
+
+<pre><code class="language-cmd">sudo apt-get install gcc gcc-c++
+sudo apt-get install build-essential
+</code></pre>
+
+<p>because those libraries are already available on Ubuntu 18.04.</p>
+
+<p>Let us move to the next steps, but from now on, I will comment the obsolete software mentioned in the official documentation in front of the relevant command line:</p>
+
+<pre><code class="language-cmd">sudo apt-get install libgtk2.0-dev # gtk2-devel
+sudo apt-get install libv4l-dev    # of libv4l-devel
+sudo apt-get install ffmpeg        # of ffmpeg-devel
+sudo apt-get install gstreamer1.0-plugins-base # gstreamer-plugins-base-devel
+sudo apt-get install gstreamer0.10-plugins-bas # additional, just in case
+sudo apt-get install pkg-config libavcodec-dev libavformat-dev libswscale-dev
+</code></pre>
+
+<h4 id="optional-dependencies">Optional Dependencies</h4>
+
+<p>Although the following consists of additional dependencies, I chose to install them instead of facing further unexpected issues. I have 1000 GB, so this does not cost me anything to install them:</p>
+
+<pre><code class="language-cmd">sudo apt-get install libpng++-dev       # libpng-devel
+sudo apt-get install libjpeg-turbo8-dev # libjpeg-turbo-devel
+sudo apt-get install libjasper-dev      # jasper-devel
+sudo apt-get install openexr            # openexr-devel
+sudo apt-get install libtiff5 libtiff5-dev libtiff-tools # libtiff-devel
+sudo apt-get install libwebp-dev        # libwebp-dev
+sudo apt-get install  libtbb2 libtbb-dev libjpeg62-dev libpng16-dev libdc1394-22-dev
+</code></pre>
+
+<p>By now the required and most important optional dependencies are installed. It is time to install OpenCV 4.0.0 for Python 3.6.</p>
+
+<p>If you do not have git install it: <code>sudo apt-get install git</code>. Then clone the OpenCV’s and OpenCV contrib repositories:</p>
+
+<pre><code class="language-cmd">cd ~
+git clone https://github.com/opencv/opencv.git
+git clone https://github.com/opencv/opencv_contrib.git
+</code></pre>
+
+<p>Note that OpenCV and opencv_contrib must be of the same version. By default, pulling down the repositories as shown above does the job, otherwise you can check it yourself too (<code>git checkout</code>).
+Building OpenCV from Source Using CMake</p>
+
+<p>Before setting up the build, give the right path to opencv_contrib`. If it is in your home directory alongside with the OpenCV’s directory then you do not have to change what is below:</p>
+
+<pre><code class="language-cmd">cd ~/opencv
+mkdir build
+cd build
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+	-D CMAKE_INSTALL_PREFIX=/usr/local \
+	-D INSTALL_C_EXAMPLES=ON \
+	-D INSTALL_PYTHON_EXAMPLES=ON \
+	-D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
+	-D BUILD_EXAMPLES=ON ..
+</code></pre>
+
+<p>When the process ends, <em>CMake</em> should recognize the Python3.6 interpreter as well as where <code>numpy</code> is as shown on my screenshot. Note that <em>CMake</em>, in my case, knows also about Python2.7 interpreter because I installed it myself (which thing I did not cover here, but you do not need to install it if you want simply to do what the title of this tutorial says) Always inside the <em>opencv/build directory</em>, run this command:</p>
+
+<pre><code class="language-cmd">make -j4
+</code></pre>
+
+<p>I wrote <code>-j4</code> because my processor has 4 cores. So you must modify this number to your needs. If you do not know the number of cores your processor has then simply run <code>nproc</code> on your Terminal session.</p>
+
+<p>If everything is OK by now, you should be able to install OpenCV:</p>
+
+<pre><code class="language-cmd">sudo make install
+</code></pre>
+
+<h2 id="enjoy">Enjoy !</h2>
+
+<p><a name="1"></a>
+<sup>1</sup>.<a href="https://docs.opencv.org/3.4.1/d2/de6/tutorial_py_setup_in_ubuntu.html">https://docs.opencv.org/3.4.1/d2/de6/tutorial_py_setup_in_ubuntu.html</a>
+<a name="2"></a>
+<sup>2</sup>.<a href="https://docs.opencv.org/3.4.1/d7/d9f/tutorial_linux_install.html">https://docs.opencv.org/3.4.1/d7/d9f/tutorial_linux_install.html</a>
+<a name="3"></a>
+<sup>3</sup>.<a href="https://wiki.ubuntu.com/Python/Python36Transition">https://wiki.ubuntu.com/Python/Python36Transition</a>
+<a name="4"></a>
+<sup>4</sup>.<a href="https://packages.ubuntu.com/">https://packages.ubuntu.com/</a>
+<a name="5"></a><br/>
+<sup>5</sup>.<a href="https://www.begueradj.com/installing-opencv-3.2.0-for-python-3.5.2-on-ubuntu-16.04.2-lts.html">https://www.begueradj.com/installing-opencv-3.2.0-for-python-3.5.2-on-ubuntu-16.04.2-lts.html</a></p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://www.begueradj.com/post/python-decorators/" data-toggle="tooltip" data-placement="top" title="Python decorators">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://www.begueradj.com/post/bubble-sort/" data-toggle="tooltip" data-placement="top" title="A slightly improved version of bubble sort algorithm">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/begueradj" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/8752798/begueradj" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Billal Begueradj
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://www.begueradj.com/js/main.js"></script>
+<script src="https://www.begueradj.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://www.begueradj.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

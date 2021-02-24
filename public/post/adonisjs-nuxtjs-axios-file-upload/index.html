@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>File upload from a Nuxt.js client to an AdonisJS RESTful API server using axios - Begueradj</title>
+  <meta property="og:title" content="File upload from a Nuxt.js client to an AdonisJS RESTful API server using axios" />
+  <meta name="twitter:title" content="File upload from a Nuxt.js client to an AdonisJS RESTful API server …" />
+  <meta name="description" content="Preamble AdonisJs documentation shows how to upload files to the server using the HTML5 &lt;form&gt; element. But there are cases where axios comes more handy. So let us see how to upload files from a Nuxt.js client application to an AdonisJS RESTful API server with axios. I shared this project on my Github profile.
+Project setup In my demo, the client and server code are set apart. My client application is handled by Nuxt.">
+  <meta property="og:description" content="Preamble AdonisJs documentation shows how to upload files to the server using the HTML5 &lt;form&gt; element. But there are cases where axios comes more handy. So let us see how to upload files from a Nuxt.js client application to an AdonisJS RESTful API server with axios. I shared this project on my Github profile.
+Project setup In my demo, the client and server code are set apart. My client application is handled by Nuxt.">
+  <meta name="twitter:description" content="Preamble AdonisJs documentation shows how to upload files to the server using the HTML5 &lt;form&gt; element. But there are cases where axios comes more handy. So let us see how to upload files from a …">
+  <meta name="author" content="Billal Begueradj"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Begueradj",
+    
+    "url": "https://www.begueradj.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https://www.begueradj.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https://www.begueradj.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https://www.begueradj.com/post/adonisjs-nuxtjs-axios-file-upload/",
+          "name": "File upload from a nuxt.js client to an adonis j s r e s tful a p i server using axios"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Billal Begueradj"
+  },
+  "headline": "File upload from a Nuxt.js client to an AdonisJS RESTful API server using axios",
+  "description" : "Preamble AdonisJs documentation shows how to upload files to the server using the HTML5 &amp;lt;form&amp;gt; element. But there are cases where axios comes more handy. So let us see how to upload files from a Nuxt.js client application to an AdonisJS RESTful API server with axios. I shared this project on my Github profile.
+Project setup In my demo, the client and server code are set apart. My client application is handled by Nuxt.",
+  "inLanguage" : "en",
+  "wordCount": 831,
+  "datePublished" : "2019-01-12T12:33:21",
+  "dateModified" : "2019-01-12T12:33:21",
+  "image" : "https://www.begueradj.com/begueradj.png",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "https://www.begueradj.com/post/adonisjs-nuxtjs-axios-file-upload/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https://www.begueradj.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https://www.begueradj.com/begueradj.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="File upload from a Nuxt.js client to an AdonisJS RESTful API server using axios" />
+<meta property="og:description" content="Preamble AdonisJs documentation shows how to upload files to the server using the HTML5 &lt;form&gt; element. But there are cases where axios comes more handy. So let us see how to upload files from a Nuxt.js client application to an AdonisJS RESTful API server with axios. I shared this project on my Github profile.
+Project setup In my demo, the client and server code are set apart. My client application is handled by Nuxt.">
+<meta property="og:image" content="https://www.begueradj.com/begueradj.png" />
+<meta property="og:url" content="https://www.begueradj.com/post/adonisjs-nuxtjs-axios-file-upload/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Begueradj" />
+  <meta name="twitter:title" content="File upload from a Nuxt.js client to an AdonisJS RESTful API server …" />
+  <meta name="twitter:description" content="Preamble AdonisJs documentation shows how to upload files to the server using the HTML5 &lt;form&gt; element. But there are cases where axios comes more handy. So let us see how to upload files from a …">
+  <meta name="twitter:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:card" content="summary" />
+  <link href='https://www.begueradj.com/begueradj.png' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:image" content="https://www.begueradj.com/begueradj.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://www.begueradj.com/post/adonisjs-nuxtjs-axios-file-upload/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Begueradj" />
+
+  <meta name="generator" content="Hugo 0.53" />
+  <link rel="alternate" href="https://www.begueradj.com/index.xml" type="application/rss+xml" title="Begueradj">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.begueradj.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://www.begueradj.com/css/highlight.min.css" /><link rel="stylesheet" href="https://www.begueradj.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.begueradj.com">Begueradj</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Categories" href="/categories">Categories</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Begueradj" href="https://www.begueradj.com">
+            <img class="avatar-img" src="https://www.begueradj.com/begueradj.png" alt="Begueradj" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>File upload from a Nuxt.js client to an AdonisJS RESTful API server using axios</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 12, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;831&nbsp;words
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Billal Begueradj
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h3 id="preamble">Preamble</h3>
+
+<p>AdonisJs documentation shows how to upload files to the server using the HTML5 <code>&lt;form&gt;</code> element. But there are cases where axios comes more handy. So let us see how to upload files from a Nuxt.js client application to an AdonisJS RESTful API server with axios. I shared <a href="https://github.com/begueradj/blog/tree/master/adonisjs_rest_api_nuxtjs_file_upload">this project</a> on my Github profile.</p>
+
+<h3 id="project-setup">Project setup</h3>
+
+<p>In my demo, the client and server code are set apart. My client application is handled by Nuxt.js:</p>
+
+<pre><code class="language-cmd">yarn create nuxt-app client
+</code></pre>
+
+<p>and the server by AdonisJs:</p>
+
+<pre><code class="language-cmd">adonis new server --api-only
+</code></pre>
+
+<p>On my Github project, I use Vuetify.js and Eslint.</p>
+
+<h3 id="nuxt-js-client-code">Nuxt.js client code</h3>
+
+<p>Here is where the main code is located:</p>
+
+<pre><code class="language-cmd">components/
+├── FileUpload.vue
+└── MainPage.vue
+pages/
+└── index.vue
+layouts/
+└── default.vue
+</code></pre>
+
+<p>And this is the simple user interface I want to create:
+<img src="/file_upload.png" alt="file upload" /></p>
+
+<p>Basically I like to have <code>MainPage.vue</code> component to wrap all my other components; in this case I need only the <code>FileUpload.vue</code> component:</p>
+
+<pre><code class="language-javascript">&lt;template&gt;
+  &lt;file-upload /&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import FileUpload from '@/components/FileUpload.vue'
+
+export default {
+  name: 'MainPage',
+  components: {
+    FileUpload
+  }
+}
+&lt;/script&gt;
+</code></pre>
+
+<p>The essential part of the code is what the <code>FileUpload.vue</code> component contains. So I show here the full code and then will explain the main points:
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span></span><span class="lineno"> 1 </span><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+<span class="lineno"> 2 </span>  <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">container</span>
+<span class="lineno"> 3 </span>    <span class="nx">grid</span><span class="o">-</span><span class="nx">list</span><span class="o">-</span><span class="nx">md</span>
+<span class="lineno"> 4 </span>    <span class="nx">text</span><span class="o">-</span><span class="nx">xs</span><span class="o">-</span><span class="nx">center</span>
+<span class="lineno"> 5 </span>    <span class="nx">fill</span><span class="o">-</span><span class="nx">height</span><span class="o">&gt;</span>
+<span class="lineno"> 6 </span>    <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">layout</span>
+<span class="lineno"> 7 </span>      <span class="nx">row</span>
+<span class="lineno"> 8 </span>      <span class="nx">wrap</span>
+<span class="lineno"> 9 </span>      <span class="nx">align</span><span class="o">-</span><span class="nx">center</span><span class="o">&gt;</span>
+<span class="lineno">10 </span>      <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">flex</span>
+<span class="lineno">11 </span>        <span class="nx">xs6</span>
+<span class="lineno">12 </span>        <span class="nx">offset</span><span class="o">-</span><span class="nx">xs3</span><span class="o">&gt;</span>
+<span class="lineno">13 </span>        <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">text</span><span class="o">-</span><span class="nx">field</span>
+<span class="lineno">14 </span>          <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="s2">&quot;photoName&quot;</span>
+<span class="lineno">15 </span>          <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;photo&quot;</span>
+<span class="lineno">16 </span>          <span class="nx">outline</span>
+<span class="lineno">17 </span>          <span class="nx">background</span><span class="o">-</span><span class="nx">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span>
+<span class="lineno">18 </span>          <span class="nx">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span>
+<span class="lineno">19 </span>          <span class="nx">label</span><span class="o">=</span><span class="s2">&quot;Select image&quot;</span>
+<span class="lineno">20 </span>          <span class="nx">append</span><span class="o">-</span><span class="nx">icon</span><span class="o">=</span><span class="s2">&quot;attach_file&quot;</span>
+<span class="lineno">21 </span>          <span class="err">@</span><span class="nx">click</span><span class="o">=</span><span class="s2">&quot;selectImage&quot;</span><span class="o">/&gt;</span>
+<span class="lineno">22 </span>        <span class="o">&lt;</span><span class="nx">input</span>
+<span class="lineno">23 </span>          <span class="nx">ref</span><span class="o">=</span><span class="s2">&quot;image&quot;</span>
+<span class="lineno">24 </span>          <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;hide-input&quot;</span>
+<span class="lineno">25 </span>          <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;file&quot;</span>
+<span class="lineno">26 </span>          <span class="nx">accept</span><span class="o">=</span><span class="s2">&quot;image/*&quot;</span>
+<span class="lineno">27 </span>          <span class="err">@</span><span class="nx">change</span><span class="o">=</span><span class="s2">&quot;imageSelected&quot;</span><span class="o">&gt;</span>
+<span class="lineno">28 </span>        <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">btn</span>
+<span class="lineno">29 </span>          <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;upload-button&quot;</span>
+<span class="lineno">30 </span>          <span class="nx">color</span><span class="o">=</span><span class="s2">&quot;indigo&quot;</span>
+<span class="lineno">31 </span>          <span class="err">@</span><span class="nx">click</span><span class="o">=</span><span class="s2">&quot;upload_photo&quot;</span><span class="o">&gt;</span>
+<span class="lineno">32 </span>          <span class="nx">Upload</span>
+<span class="lineno">33 </span>          <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">icon</span>
+<span class="lineno">34 </span>            <span class="nx">right</span>
+<span class="lineno">35 </span>            <span class="nx">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="o">&gt;</span>
+<span class="lineno">36 </span>            <span class="nx">cloud_upload</span>
+<span class="lineno">37 </span>          <span class="o">&lt;</span><span class="err">/v-icon&gt;</span>
+<span class="lineno">38 </span>        <span class="o">&lt;</span><span class="err">/v-btn&gt;</span>
+<span class="lineno">39 </span>      <span class="o">&lt;</span><span class="err">/v-flex&gt;</span>
+<span class="lineno">40 </span>    <span class="o">&lt;</span><span class="err">/v-layout&gt;</span>
+<span class="lineno">41 </span>  <span class="o">&lt;</span><span class="err">/v-container&gt;</span>
+<span class="lineno">42 </span><span class="o">&lt;</span><span class="err">/template&gt;</span>
+<span class="lineno">43 </span>
+<span class="lineno">44 </span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+<span class="lineno">45 </span><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<span class="lineno">46 </span>  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;FileUpload&#39;</span><span class="p">,</span>
+<span class="lineno">47 </span>  <span class="nx">data</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;({</span>
+<span class="lineno">48 </span>    <span class="nx">photo</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="lineno">49 </span>    <span class="nx">photoName</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+<span class="lineno">50 </span>  <span class="p">}),</span>
+<span class="lineno">51 </span>  <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+<span class="lineno">52 </span>    <span class="nx">selectImage</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno">53 </span>      <span class="k">this</span><span class="p">.</span><span class="nx">photo</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">$refs</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">click</span><span class="p">()</span>
+<span class="lineno">54 </span>    <span class="p">},</span>
+<span class="lineno">55 </span>    <span class="nx">imageSelected</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">56 </span>      <span class="k">this</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="lineno">57 </span>      <span class="k">this</span><span class="p">.</span><span class="nx">photo</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">$refs</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="lineno">58 </span>      <span class="k">this</span><span class="p">.</span><span class="nx">photoName</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">photo</span><span class="p">.</span><span class="nx">name</span>
+<span class="lineno">59 </span>    <span class="p">},</span>
+<span class="lineno">60 </span>    <span class="nx">async</span> <span class="nx">upload_photo</span><span class="p">()</span> <span class="p">{</span>
+<span class="lineno">61 </span>      <span class="kd">let</span> <span class="nx">formData</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">()</span>
+<span class="lineno">62 </span>      <span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span>  <span class="k">this</span><span class="p">.</span><span class="nx">photo</span><span class="p">)</span>
+<span class="lineno">63 </span>      <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="s1">&#39;http://127.0.0.1:3333/upload&#39;</span>
+<span class="lineno">64 </span>      <span class="kd">let</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<span class="lineno">65 </span>	<span class="nx">headers</span><span class="o">:</span> <span class="p">{</span>
+<span class="lineno">66 </span>          <span class="s1">&#39;content-type&#39;</span><span class="o">:</span> <span class="s1">&#39;multipart/form-data&#39;</span>
+<span class="lineno">67 </span>	<span class="p">}</span>
+<span class="lineno">68 </span>      <span class="p">}</span>
+<span class="lineno">69 </span>      <span class="nx">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">$axios</span><span class="p">({</span>
+<span class="lineno">70 </span>      	<span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span>
+<span class="lineno">71 </span>      	<span class="nx">url</span><span class="o">:</span> <span class="nx">url</span><span class="p">,</span>
+<span class="lineno">72 </span>      	<span class="nx">data</span><span class="o">:</span>  <span class="nx">formData</span><span class="p">,</span>
+<span class="lineno">73 </span>      	<span class="nx">config</span><span class="o">:</span> <span class="nx">config</span>
+<span class="lineno">74 </span>      <span class="p">})</span>
+<span class="lineno">75 </span>      
+<span class="lineno">76 </span>    <span class="p">}</span>
+<span class="lineno">77 </span>  <span class="p">}</span>
+<span class="lineno">78 </span><span class="p">}</span>
+<span class="lineno">79 </span><span class="o">&lt;</span><span class="err">/script&gt;</span>
+<span class="lineno">80 </span>
+<span class="lineno">81 </span><span class="o">&lt;</span><span class="nx">style</span> <span class="nx">scoped</span><span class="o">&gt;</span>
+<span class="lineno">82 </span><span class="p">.</span><span class="nx">hide</span><span class="o">-</span><span class="nx">input</span> <span class="p">{</span>
+<span class="lineno">83 </span>    <span class="nx">display</span><span class="o">:</span> <span class="nx">none</span><span class="p">;</span>
+<span class="lineno">84 </span><span class="p">}</span>
+<span class="lineno">85 </span><span class="o">*</span><span class="p">{</span>
+<span class="lineno">86 </span>    <span class="nx">text</span><span class="o">-</span><span class="nx">transform</span><span class="o">:</span> <span class="nx">none</span> <span class="o">!</span><span class="nx">important</span><span class="p">;</span>
+<span class="lineno">87 </span><span class="p">}</span>
+<span class="lineno">88 </span><span class="p">.</span><span class="nx">upload</span><span class="o">-</span><span class="nx">button</span> <span class="p">{</span>
+<span class="lineno">89 </span>    <span class="nx">border</span><span class="o">-</span><span class="nx">radius</span><span class="o">:</span> <span class="mi">50</span><span class="nx">px</span><span class="p">;</span>
+<span class="lineno">90 </span>    <span class="nx">color</span><span class="o">:</span> <span class="nx">white</span><span class="p">;</span>
+<span class="lineno">91 </span><span class="p">}</span>
+<span class="lineno">92 </span><span class="o">&lt;</span><span class="err">/style&gt;</span>
+</code></pre></div>
+
+As Vuetify.js which I am using here (listed in the dependencies of the project) does not have a component which behaves as the HTML5 <code>&lt;input&gt;</code> element, I need to hide this later one when displaying the <code>&lt;v-text-field /&gt;</code> component. This is the traditional simple but efficient trick usually used in this case; then we trigger a click on this hidden file input as follows:</p>
+
+<pre><code class="language-javascript">imageSelected(e) {
+  this.photo = this.$refs.image.files[0]
+},
+</code></pre>
+
+<p>My input file element is referenced with <code>image</code>, that is why we need to look to the references available in this DOM template with it:</p>
+
+<pre><code class="language-javascript">&lt;input
+  ref=&quot;image&quot;
+  class=&quot;hide-input&quot;
+  type=&quot;file&quot;
+  accept=&quot;image/*&quot;
+  @change=&quot;imageSelected&quot;&gt;
+</code></pre>
+
+<p>In my particular case, I am interested in uploading images only, that is why I set <code>accept=&quot;image/*&quot;</code>. The main thing not to forget in the AJAX request is to declare the content-type header. I think the rest of the code is self explanatory:</p>
+
+<pre><code class="language-javascript">async upload_photo() {
+  let formData = new FormData()
+  formData.append('file',  this.photo)
+  let url = 'http://127.0.0.1:3333/upload' // This is the endpoint of my REST API on the server 
+  // below is equivalent to the enctype=&quot;multipart/form-data&quot; we use in the &lt;form&gt; element
+  let config = {
+    headers: {
+      'content-type': 'multipart/form-data'
+    }
+  }
+  await this.$axios({
+    method: 'post',
+    url: url,
+    data:  formData,
+    config: config
+  })
+}
+</code></pre>
+
+<p>If you are a one-liner, the asynchronous code above (the <code>await</code> part) can be written concisely as follows:</p>
+
+<pre><code class="language-javascript">await this.$axios.$post(url, formData, config)
+</code></pre>
+
+<h3 id="adonisjs-rest-api-server-code">AdonisJs REST API server code</h3>
+
+<p>On the server, I first set the endpoint in start/routes.js:</p>
+
+<pre><code class="language-javascript">Route.post('/upload', 'PhotoController.upload')
+</code></pre>
+
+<p>Then I created the corresponding controller:</p>
+
+<pre><code class="language-javascript">adonis make:controller PhotoController
+</code></pre>
+
+<p>Inside this controller (<code>app/Controllers/Http/PhotoController.js</code>), I received the object <code>File()</code> sent by the axios <code>POST</code> request in my client code by inspecting the request object of AdonisJs: <code>const photo = request.file('file')</code>. Note that I use file to reference its key in the <code>FormData()</code> object which contains it. Below I rename the file with the current time of the server’s machine:</p>
+
+<pre><code class="language-javascript">'use strict'
+
+const Helpers = use('Helpers')
+
+class PhotoController {
+  async upload( {request, response} ) {
+    const photo = request.file('file')
+    await photo.move(Helpers.tmpPath('photos'), {
+      name: new Date().getTime() +'.'+avatar.subtype,
+      overwrite: true
+    })
+  }
+}
+
+module.exports = PhotoController
+</code></pre>
+
+<p>If you upload a photo, you will find it on the server, precisely in the folder <code>/tmp/photos</code>. Note that you have to enable CORS for the requests to be acceped. You can do that by setting <strong>cors: true</strong> in <code>config/cors.js</code> file. For larger images, set the limit value of <code>maxSize</code> to whatever you want in <code>/config/bodyParser.js</code> which is 20mb by default.</p>
+
+
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://www.begueradj.com/post/emacs/" data-toggle="tooltip" data-placement="top" title="Emacs issues and solutions">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://github.com/begueradj" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/8752798/begueradj" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Billal Begueradj
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://www.begueradj.com/js/main.js"></script>
+<script src="https://www.begueradj.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://www.begueradj.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+
