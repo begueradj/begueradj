@@ -10,3 +10,6 @@ I wear two hats which are complementary to each other:
 - [x] Information Security
 - [x] Software Engineering
 
+
+![begueradj](/begueradj.jpg)
+
