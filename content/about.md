@@ -5,11 +5,10 @@ comments: false
 ---
 I am Billal BEGUERADJ from Algeria.
 
-I wear two hats which are complementary to each other:
-
-- [x] Information Security
-- [x] Software Engineering
+You can contact me via:
+`7542 E34E 17ED 6FF5 8C08  B315 6C67 7E1A FC80 10DD`
 
 
-![begueradj](/begueradj.jpg)
+
+
 
