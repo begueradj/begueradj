@@ -5,8 +5,7 @@ comments: false
 ---
 I am Billal BEGUERADJ from Algeria.
 
-You can contact me via:
-`7542 E34E 17ED 6FF5 8C08  B315 6C67 7E1A FC80 10DD`
+You can contact me via: `7542E34E17ED6FF58C08B3156C677E1AFC8010DD`
 
 
 
