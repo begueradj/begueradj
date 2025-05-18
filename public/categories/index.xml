@@ -1,30 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Begueradj</title>
-    <link>https://www.begueradj.com/categories/</link>
-    <description>Recent content in Categories on Begueradj</description>
+    <title>Categories on Billal BEGUERADJ</title>
+    <link>https://example.com/categories/</link>
+    <description>Recent content in Categories on Billal BEGUERADJ</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 13 Jul 2020 12:33:21 +0800</lastBuildDate>
-    
-	<atom:link href="https://www.begueradj.com/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Aug 2021 12:33:21 +0800</lastBuildDate><atom:link href="https://example.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>development</title>
-      <link>https://www.begueradj.com/categories/development/</link>
-      <pubDate>Mon, 13 Jul 2020 12:33:21 +0800</pubDate>
+      <link>https://example.com/categories/development/</link>
+      <pubDate>Sat, 07 Aug 2021 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/categories/development/</guid>
+      <guid>https://example.com/categories/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>security</title>
-      <link>https://www.begueradj.com/categories/security/</link>
+      <link>https://example.com/categories/security/</link>
       <pubDate>Sun, 07 Jan 2018 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/categories/security/</guid>
+      <guid>https://example.com/categories/security/</guid>
       <description></description>
     </item>
     

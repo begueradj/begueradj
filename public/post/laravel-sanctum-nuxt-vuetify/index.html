@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="dark">
+    <title>Laravel Sanctum with Nuxt and Vuetify SPA | Billal BEGUERADJ</title>
+
+    
+    
+    
+    <meta property="og:site_name" content="Billal BEGUERADJ software, programming, security, startup" />
+    <meta property="og:title" content="Laravel Sanctum with Nuxt and Vuetify SPA | Billal BEGUERADJ"/>
+    <meta itemprop="name" content="Laravel Sanctum with Nuxt and Vuetify SPA | Billal BEGUERADJ" />
+    <meta name="twitter:title" content="Laravel Sanctum with Nuxt and Vuetify SPA | Billal BEGUERADJ" />
+    <meta name="application-name" content="Laravel Sanctum with Nuxt and Vuetify SPA | Billal BEGUERADJ" /><meta name="twitter:card" content="summary"/>
+
+    <meta name="description" content="Billal BEGUERADJ shoftware development, programming, information security, startup" />
+    <meta name="twitter:description" content="Billal BEGUERADJ shoftware development, programming, information security, startup"/>
+    <meta itemprop="description" content="Billal BEGUERADJ shoftware development, programming, information security, startup"/>
+    <meta property="og:description" content="Billal BEGUERADJ shoftware development, programming, information security, startup" />
+
+    
+
+<meta property="og:type" content="article" />
+<meta property="article:publisher" content="Billal BEGUERADJ" />
+<meta property="og:article:published_time" content=2021-08-07T12:33:21&#43;0800 />
+<meta property="article:published_time" content=2021-08-07T12:33:21&#43;0800 />
+
+
+
+
+
+<script defer type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Laravel Sanctum with Nuxt and Vuetify SPA",
+    "author": {
+      "@type": "Person",
+      "name": "Billal BEGUERADJ"
+    },
+    "datePublished": "2021-08-07",
+    "description": "",
+    "wordCount":  1614 ,
+    "mainEntityOfPage": "True",
+    "dateModified": "2021-08-07",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Billal BEGUERADJ",
+      "logo": {
+        "@type": "imageObject",
+        "url": "https:\/\/example.com\/favicon.ico"
+      }
+    }
+  }
+</script>
+
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    
+    <link rel="stylesheet" href="/sass/main.min.ab99ff095f832511e24ffb2fba2b51ad473b2f7e9301d674eba2c6c3a6e8bd81.css">
+    
+</head>
+    
+    <script>
+        (function() {
+            const colorSchemeKey = 'ThemeColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'ThemeColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.userColorScheme = 'dark';
+        } else {
+            document.documentElement.dataset.userColorScheme = 'light';
+        }
+    })();
+</script>
+
+
+    <body class="dark">
+        <nav class="navbar">
+    <div class="container">
+        <div class="flex">
+            <div>
+                <a class="brand" href="/">
+                    
+                    
+                    Billal BEGUERADJ
+                    </a>
+            </div>
+            <div class="flex">
+                
+                <a href="/about/">About</a>
+                
+                <a href="/articles/">Articles</a>
+                
+                
+                    <button id="dark-mode-button">
+                    <svg class="light" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M30.312.776C32 19 20 32 .776 30.312c8.199 7.717 21.091 7.588 29.107-.429C37.9 21.867 38.03 8.975 30.312.776z"/><path d="M30.705 15.915a1.163 1.163 0 1 0 1.643 1.641a1.163 1.163 0 0 0-1.643-1.641zm-16.022 14.38a1.74 1.74 0 0 0 0 2.465a1.742 1.742 0 1 0 0-2.465zm13.968-2.147a2.904 2.904 0 0 1-4.108 0a2.902 2.902 0 0 1 0-4.107a2.902 2.902 0 0 1 4.108 0a2.902 2.902 0 0 1 0 4.107z" fill="#FFCC4D"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
+                    <svg class="dark" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 36 36"><path fill="#FFD983" d="M16 2s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2V2zm18 14s2 0 2 2s-2 2-2 2h-2s-2 0-2-2s2-2 2-2h2zM4 16s2 0 2 2s-2 2-2 2H2s-2 0-2-2s2-2 2-2h2zm5.121-8.707s1.414 1.414 0 2.828s-2.828 0-2.828 0L4.878 8.708s-1.414-1.414 0-2.829c1.415-1.414 2.829 0 2.829 0l1.414 1.414zm21 21s1.414 1.414 0 2.828s-2.828 0-2.828 0l-1.414-1.414s-1.414-1.414 0-2.828s2.828 0 2.828 0l1.414 1.414zm-.413-18.172s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zm-21 21s-1.414 1.414-2.828 0s0-2.828 0-2.828l1.414-1.414s1.414-1.414 2.828 0s0 2.828 0 2.828l-1.414 1.414zM16 32s0-2 2-2s2 2 2 2v2s0 2-2 2s-2-2-2-2v-2z"/><circle fill="#FFD983" cx="18" cy="18" r="10"/><rect x="0" y="0" width="36" height="36" fill="rgba(0, 0, 0, 0)" /></svg>
+                    </button>
+                
+            </div>
+            </div>
+    </div>
+</nav>
+
+        <main>
+            
+<div class="container">
+    <article>
+        <header class="article-header">
+            <div class="thumb">
+                <div>
+                    <h1>Laravel Sanctum with Nuxt and Vuetify SPA</h1>
+                    <div class="post-meta">
+                        <div>
+                            
+                            
+                              
+                            
+                            By Billal BEGUERADJ | <time>August 07, 2021</time>
+                            | 8 minutes
+                        </div>
+                        <div class="tags">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </article>
+
+    <div class="article-post">
+    <p>Sanctum allows, among other things, to authenticate an SPA via cookies using the <code>web</code> authentication guard. The following discussion shows how to create a single page application using Nuxt.js and VuetifyJs to connect it (sign up, sign in and logout a user) to a backend API through Laravel Sanctum. Laravel 8 is the version used below.</p>
+<h2 id="1-backend">
+    <a href="#1-backend" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    1. Backend
+</h2>
+<p>Below creates a new Laravel project named &lsquo;server&rsquo;:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">composer create-project --prefer-dist laravel/laravel server
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Once the database settings are done in <code>server/.env</code> file, migrations can be run:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">php artisan migrate
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>At this point, Laravel Sanctum can be installed and set as per the official documentation:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># Install Sanctum
+</span></span><span class="line"><span class="cl">composer require laravel/sanctum
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Publish its configuration and migration files 
+</span></span><span class="line"><span class="cl">php artisan vendor:publish --provider=<span class="s2">&#34;Laravel\Sanctum\SanctumServiceProvider&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Run Sanctum migrations
+</span></span><span class="line"><span class="cl">php artisan migrate
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Add Sanctum&#39;s middleware to API middleware group in server/app/Http/Kernel.php file
+</span></span><span class="line"><span class="cl">&#39;api&#39; =<span class="p">&gt;</span> [
+</span></span><span class="line"><span class="cl">    \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+</span></span><span class="line"><span class="cl">    &#39;throttle:api&#39;,
+</span></span><span class="line"><span class="cl">    \Illuminate\Routing\Middleware\SubstituteBindings::class,
+</span></span><span class="line"><span class="cl">],
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>More serious things start at this point:
+In <strong>routes/api.php</strong>, <code>auth:sanctum</code> should be used instead of the default <code>auth:api</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">Route</span><span class="o">::</span><span class="na">middleware</span><span class="p">(</span><span class="s1">&#39;auth:sanctum&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/user&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The above route <code>api/user</code> is used to request the identity of the currently logged in user, i.d. after the authentication is successful.</p>
+<p>In <strong>.env</strong> these 2 values have to be added:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># Used in config/session.php
+</span></span><span class="line"><span class="cl">SESSION_DOMAIN=localhost
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># Used in config/sanctum.php. This should match our client
+</span></span><span class="line"><span class="cl">SANCTUM_STATEFUL_DOMAINS=localhost:3000
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Browsers do not allow HTTP requests between different domains. With CORS, a server can agree about which client it can receive requests. This is done in Laravel in <strong>config/cors.php</strong> file by setting the following key to <code>true</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="s1">&#39;supports_credentials&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>It would be nice to create a user in the database at this stage. This can be done from the command line quite fast:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">php artisan tinker
+</span></span><span class="line"><span class="cl">Psy Shell v0.10.8 (PHP 7.4.22 — cli) by Justin Hileman
+</span></span><span class="line"><span class="cl"><span class="p">&gt;&gt;</span>&gt; $user = new App\Models\User;
+</span></span><span class="line"><span class="cl">=<span class="p">&gt;</span> App\Models\User {#3391}
+</span></span><span class="line"><span class="cl"><span class="p">&gt;&gt;</span>&gt; $user-<span class="p">&gt;</span>name = &#39;begueradj&#39;;
+</span></span><span class="line"><span class="cl">=<span class="p">&gt;</span> <span class="s2">&#34;begueradj&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&gt;&gt;</span>&gt; $user-<span class="p">&gt;</span>email = &#39;billal@begueradj.com&#39;;
+</span></span><span class="line"><span class="cl">=<span class="p">&gt;</span> <span class="s2">&#34;begueradj@gmail.com&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&gt;&gt;</span>&gt; $user-<span class="p">&gt;</span>password = bcrypt(&#39;begueradj&#39;);
+</span></span><span class="line"><span class="cl">=<span class="p">&gt;</span> <span class="s2">&#34;$2y$10$vXdKSDE9Qud/cy4urMrRieeUED2kNSnmZLGfMx3xZls7.69FtFCUe&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&gt;&gt;</span>&gt; $user-<span class="p">&gt;</span>save();
+</span></span><span class="line"><span class="cl">=<span class="p">&gt;</span> true
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Next, 2 controllers can be created to login and to register a user:</p>
+<h3 id="11-logincontroller">
+    <a href="#11-logincontroller" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    1.1. LoginController
+</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">php artisan make:controller LoginController
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The below code is not perfect and does not comply with best practices but the goal is to just make things function:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Auth</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">LoginController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">login</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;password&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;required&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="nx">Auth</span><span class="o">::</span><span class="na">attempt</span><span class="p">(</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">only</span><span class="p">(</span><span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">)))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">(</span><span class="nx">Auth</span><span class="o">::</span><span class="na">user</span><span class="p">(),</span> <span class="mi">200</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="cm">/* throw ValidationException::withMessages([
+</span></span></span><span class="line"><span class="cl"><span class="cm">            &#39;email&#39; =&gt; [&#39;The provided credentials are incorrect.&#39;]
+</span></span></span><span class="line"><span class="cl"><span class="cm">        ]); */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">logout</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">Auth</span><span class="o">::</span><span class="na">logout</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="12-registercontroller">
+    <a href="#12-registercontroller" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    1.2 RegisterController
+</h3>
+<p>It could be done this way:</p>
+<pre tabindex="0"><code>&lt;?php
+
+namespace App\Http\Controllers;
+
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Auth;
+
+class RegisterController extends Controller
+{
+    public function register(Request $request)
+    {
+        // var_dump($request-&gt;name);
+        $request-&gt;validate([
+             &#39;name&#39; =&gt; [&#39;required&#39;],
+             &#39;email&#39; =&gt; [&#39;required&#39;, &#39;email&#39;, &#39;unique:users&#39;],
+             &#39;password&#39; =&gt; [&#39;required&#39;, &#39;min:8&#39;, &#39;confirmed&#39;]
+         ]);
+
+         User::create([
+             &#39;name&#39; =&gt; $request-&gt;name,
+             &#39;email&#39; =&gt; $request-&gt;email,
+             &#39;password&#39; =&gt; Hash::make($request-&gt;password)
+         ]);
+    }
+}
+</code></pre><p>The new functions can be reached out through  <strong>routes/api.php</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Route</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">App\Http\Controllers\LoginController</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">App\Http\Controllers\RegisterController</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Route</span><span class="o">::</span><span class="na">middleware</span><span class="p">(</span><span class="s1">&#39;auth:sanctum&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/user&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Route</span><span class="o">::</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;/login&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">LoginController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;login&#39;</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Route</span><span class="o">::</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;/register&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">RegisterController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;register&#39;</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Route</span><span class="o">::</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;/logout&#39;</span><span class="p">,</span> <span class="p">[</span><span class="nx">LoginController</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="s1">&#39;logout&#39;</span><span class="p">]);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="2-frontend">
+    <a href="#2-frontend" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    2. Frontend
+</h2>
+<p>A SPA can be created using Nuxt.js. Below, VuetifyJs as well as axios are going to be used during the creation process of the client project:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">yarn create nuxt-app client
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The <strong>@nuxtjs/auth-next</strong> module can be installed with:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">yarn add --exact @nuxtjs/auth-next
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Both <strong>@nuxtjs/auth-next</strong> and <strong>@nuxtjs/axios</strong> should be declared in <strong>nuxt.config.js</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">modules</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">&#39;@nuxtjs/axios&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s1">&#39;@nuxtjs/auth-next&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The settings for both modules are as follows:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">axios</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm">    When issuing a request to baseURL that needs to pass authentication headers to
+</span></span></span><span class="line"><span class="cl"><span class="cm">    the backend, &#39;credentials&#39; should be set to &#39;true&#39;
+</span></span></span><span class="line"><span class="cl"><span class="cm">  */</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">credentials</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// default value of withCredentials is fale
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  
+</span></span><span class="line"><span class="cl">  <span class="c1">// This is where to hit the server
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">baseUrl</span><span class="o">:</span> <span class="s1">&#39;http://localhost:8000&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>And:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">auth</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">  <span class="nx">redirect</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="nx">login</span><span class="o">:</span> <span class="s1">&#39;/login&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="nx">logout</span><span class="o">:</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="nx">callback</span><span class="o">:</span> <span class="s1">&#39;/login&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="nx">home</span><span class="o">:</span> <span class="s1">&#39;/&#39;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">  <span class="nx">strategies</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="nx">laravelSanctum</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="nx">provider</span><span class="o">:</span> <span class="s1">&#39;laravel/sanctum&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;http://localhost:8000&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="nx">endpoints</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">          <span class="nx">login</span><span class="o">:</span> <span class="p">{</span> <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/api/login&#39;</span><span class="p">,</span> <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;post&#39;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">        <span class="nx">user</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">          <span class="nx">property</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">        <span class="nx">tokenRequired</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="nx">tokenType</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">  <span class="nx">localStorage</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="p">},</span></span></span></code></pre></div>
+<p>Lines 2 - 7 can be removed as that&rsquo;s already the default behavior of nuxt auth package.</p>
+<p>If the project is mainly admin focused with only few public pages, the authenticaion module can be set globally:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">router</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">middleware</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;auth&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>And later it can be disabled on indidual public pages (routes, to be exact) as follows:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">auth</span><span class="o">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="21-login-component-and-route">
+    <a href="#21-login-component-and-route" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    2.1. Login component and route
+</h3>
+<p>Login component can be designed as follows:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">  <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">container</span> <span class="nx">fill</span><span class="o">-</span><span class="nx">height</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">row</span> <span class="nx">justify</span><span class="o">=</span><span class="s2">&#34;center&#34;</span> <span class="nx">align</span><span class="o">=</span><span class="s2">&#34;center&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">      <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">col</span> <span class="nx">cols</span><span class="o">=</span><span class="s2">&#34;12&#34;</span> <span class="nx">sm</span><span class="o">=</span><span class="s2">&#34;6&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">        <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">form</span> <span class="nx">ref</span><span class="o">=</span><span class="s2">&#34;form&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">          <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">text</span><span class="o">-</span><span class="nx">field</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="s2">&#34;form.email&#34;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">            <span class="o">:</span><span class="nx">counter</span><span class="o">=</span><span class="s2">&#34;10&#34;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">            <span class="nx">label</span><span class="o">=</span><span class="s2">&#34;Email&#34;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">            <span class="nx">color</span><span class="o">=</span><span class="s2">&#34;green&#34;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">            <span class="nx">required</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">          <span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">            <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">icon</span> <span class="nx">slot</span><span class="o">=</span><span class="s2">&#34;prepend&#34;</span> <span class="nx">color</span><span class="o">=</span><span class="s2">&#34;grey&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">              <span class="nx">email</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">            <span class="o">&lt;</span><span class="err">/v-icon&gt;</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">          <span class="o">&lt;</span><span class="err">/v-text-field&gt;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">
+</span></span><span class="line"><span class="ln">18</span><span class="cl">          <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">text</span><span class="o">-</span><span class="nx">field</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">            <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="s2">&#34;form.password&#34;</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">            <span class="nx">label</span><span class="o">=</span><span class="s2">&#34;Password&#34;</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">            <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;password&#34;</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">            <span class="nx">color</span><span class="o">=</span><span class="s2">&#34;green&#34;</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">            <span class="nx">required</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">          <span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">            <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">icon</span> <span class="nx">slot</span><span class="o">=</span><span class="s2">&#34;prepend&#34;</span> <span class="nx">color</span><span class="o">=</span><span class="s2">&#34;grey&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">              <span class="nx">lock</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">            <span class="o">&lt;</span><span class="err">/v-icon&gt;</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">          <span class="o">&lt;</span><span class="err">/v-text-field&gt;</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">
+</span></span><span class="line"><span class="ln">30</span><span class="cl">          <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">btn</span> <span class="nx">color</span><span class="o">=</span><span class="s2">&#34;blue-grey&#34;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;ml-0&#34;</span> <span class="err">@</span><span class="nx">click</span><span class="o">=</span><span class="s2">&#34;login&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">            <span class="nx">Login</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">          <span class="o">&lt;</span><span class="err">/v-btn&gt;</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">        <span class="o">&lt;</span><span class="err">/v-form&gt;</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">      <span class="o">&lt;</span><span class="err">/v-col&gt;</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">    <span class="o">&lt;</span><span class="err">/v-row&gt;</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">  <span class="o">&lt;</span><span class="err">/v-container&gt;</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl"><span class="o">&lt;</span><span class="err">/template&gt;</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">
+</span></span><span class="line"><span class="ln">39</span><span class="cl"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Login&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">  <span class="nx">data</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">    <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">      <span class="nx">form</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">        <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">        <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="ln">50</span><span class="cl">
+</span></span><span class="line"><span class="ln">51</span><span class="cl">  <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">    <span class="kr">async</span> <span class="nx">login</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">53</span><span class="cl">       <span class="c1">// this is managed automatically in the background
+</span></span></span><span class="line"><span class="ln">54</span><span class="cl"><span class="c1"></span>      <span class="c1">// await this.$axios.$get(&#39;/sanctum/csrf-cookie&#39;)
+</span></span></span><span class="line"><span class="ln">55</span><span class="cl"><span class="c1"></span>      <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">        <span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="kr">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">$auth</span><span class="p">.</span><span class="nx">loginWith</span><span class="p">(</span><span class="s1">&#39;laravelSanctum&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl">          <span class="nx">data</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">form</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="ln">59</span><span class="cl">        <span class="c1">// console.log(response)
+</span></span></span><span class="line"><span class="ln">60</span><span class="cl"><span class="c1"></span>        <span class="k">this</span><span class="p">.</span><span class="nx">$router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;/dashboard&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">61</span><span class="cl">      <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">62</span><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">63</span><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="ln">64</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">65</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">66</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">67</span><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span></span></span></code></pre></div></p>
+<p>Hence this component can be used in the <strong>login</strong> route:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="nx">login</span> <span class="o">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/template&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Login</span> <span class="nx">from</span> <span class="s1">&#39;~/components/authentication/Login.vue&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Login</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The output should look as follows:</p>
+<p><img loading="lazy" 
+    src="/login_route.png" 
+    alt="file upload" 
+     
+    width=457 
+    height="182"  /></p>
+<h3 id="22-register-component-and-route">
+    <a href="#22-register-component-and-route" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    2.2. Register component and route
+</h3>
+<p>The component should provide a user interface to populate the user migration file of the backend server:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">  <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">container</span> <span class="nx">fill</span><span class="o">-</span><span class="nx">height</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">row</span> <span class="nx">justify</span><span class="o">=</span><span class="s2">&#34;center&#34;</span> <span class="nx">align</span><span class="o">=</span><span class="s2">&#34;center&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">      <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">col</span> <span class="nx">cols</span><span class="o">=</span><span class="s2">&#34;12&#34;</span> <span class="nx">sm</span><span class="o">=</span><span class="s2">&#34;6&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">        <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">form</span> <span class="nx">ref</span><span class="o">=</span><span class="s2">&#34;form&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">          <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">text</span><span class="o">-</span><span class="nx">field</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">            <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="s2">&#34;form.name&#34;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">            <span class="o">:</span><span class="nx">counter</span><span class="o">=</span><span class="s2">&#34;10&#34;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">            <span class="nx">label</span><span class="o">=</span><span class="s2">&#34;Name&#34;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">            <span class="nx">color</span><span class="o">=</span><span class="s2">&#34;green&#34;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">            <span class="nx">required</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">          <span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">            <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">icon</span> <span class="nx">slot</span><span class="o">=</span><span class="s2">&#34;prepend&#34;</span> <span class="nx">color</span><span class="o">=</span><span class="s2">&#34;grey&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">              <span class="nx">account_circle</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">            <span class="o">&lt;</span><span class="err">/v-icon&gt;</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">          <span class="o">&lt;</span><span class="err">/v-text-field&gt;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">
+</span></span><span class="line"><span class="ln">18</span><span class="cl">          <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">text</span><span class="o">-</span><span class="nx">field</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">            <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="s2">&#34;form.email&#34;</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">            <span class="o">:</span><span class="nx">counter</span><span class="o">=</span><span class="s2">&#34;10&#34;</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">            <span class="nx">label</span><span class="o">=</span><span class="s2">&#34;Email&#34;</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">            <span class="nx">color</span><span class="o">=</span><span class="s2">&#34;green&#34;</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">            <span class="nx">required</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">          <span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">            <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">icon</span> <span class="nx">slot</span><span class="o">=</span><span class="s2">&#34;prepend&#34;</span> <span class="nx">color</span><span class="o">=</span><span class="s2">&#34;grey&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">              <span class="nx">email</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">            <span class="o">&lt;</span><span class="err">/v-icon&gt;</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">          <span class="o">&lt;</span><span class="err">/v-text-field&gt;</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">
+</span></span><span class="line"><span class="ln">30</span><span class="cl">          <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">text</span><span class="o">-</span><span class="nx">field</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl">            <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="s2">&#34;form.password&#34;</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">            <span class="nx">label</span><span class="o">=</span><span class="s2">&#34;Password&#34;</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">            <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;password&#34;</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">            <span class="nx">color</span><span class="o">=</span><span class="s2">&#34;green&#34;</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">            <span class="nx">required</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">          <span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">            <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">icon</span> <span class="nx">slot</span><span class="o">=</span><span class="s2">&#34;prepend&#34;</span> <span class="nx">color</span><span class="o">=</span><span class="s2">&#34;grey&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">              <span class="nx">lock</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">            <span class="o">&lt;</span><span class="err">/v-icon&gt;</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">          <span class="o">&lt;</span><span class="err">/v-text-field&gt;</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">
+</span></span><span class="line"><span class="ln">42</span><span class="cl">          <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">text</span><span class="o">-</span><span class="nx">field</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">            <span class="nx">v</span><span class="o">-</span><span class="nx">model</span><span class="o">=</span><span class="s2">&#34;form.password_confirmation&#34;</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">            <span class="nx">label</span><span class="o">=</span><span class="s2">&#34;Confirm password&#34;</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">            <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;password&#34;</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">            <span class="nx">color</span><span class="o">=</span><span class="s2">&#34;green&#34;</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">            <span class="nx">required</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl">          <span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl">            <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">icon</span> <span class="nx">slot</span><span class="o">=</span><span class="s2">&#34;prepend&#34;</span> <span class="nx">color</span><span class="o">=</span><span class="s2">&#34;grey&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">50</span><span class="cl">              <span class="nx">lock</span>
+</span></span><span class="line"><span class="ln">51</span><span class="cl">            <span class="o">&lt;</span><span class="err">/v-icon&gt;</span>
+</span></span><span class="line"><span class="ln">52</span><span class="cl">          <span class="o">&lt;</span><span class="err">/v-text-field&gt;</span>
+</span></span><span class="line"><span class="ln">53</span><span class="cl">
+</span></span><span class="line"><span class="ln">54</span><span class="cl">          <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">btn</span> <span class="nx">color</span><span class="o">=</span><span class="s2">&#34;blue-grey&#34;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;ml-0&#34;</span> <span class="err">@</span><span class="nx">click</span><span class="o">=</span><span class="s2">&#34;login&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">55</span><span class="cl">            <span class="nx">Register</span>
+</span></span><span class="line"><span class="ln">56</span><span class="cl">          <span class="o">&lt;</span><span class="err">/v-btn&gt;</span>
+</span></span><span class="line"><span class="ln">57</span><span class="cl">        <span class="o">&lt;</span><span class="err">/v-form&gt;</span>
+</span></span><span class="line"><span class="ln">58</span><span class="cl">      <span class="o">&lt;</span><span class="err">/v-col&gt;</span>
+</span></span><span class="line"><span class="ln">59</span><span class="cl">    <span class="o">&lt;</span><span class="err">/v-row&gt;</span>
+</span></span><span class="line"><span class="ln">60</span><span class="cl">  <span class="o">&lt;</span><span class="err">/v-container&gt;</span>
+</span></span><span class="line"><span class="ln">61</span><span class="cl"><span class="o">&lt;</span><span class="err">/template&gt;</span>
+</span></span><span class="line"><span class="ln">62</span><span class="cl">
+</span></span><span class="line"><span class="ln">63</span><span class="cl"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">64</span><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">65</span><span class="cl">  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Register&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">66</span><span class="cl">  <span class="nx">data</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">67</span><span class="cl">    <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">68</span><span class="cl">      <span class="nx">form</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">69</span><span class="cl">        <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">70</span><span class="cl">        <span class="nx">email</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">71</span><span class="cl">        <span class="nx">password</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">72</span><span class="cl">        <span class="nx">password_confirmation</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="ln">73</span><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="ln">74</span><span class="cl">      <span class="nx">errors</span><span class="o">:</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="ln">75</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">76</span><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="ln">77</span><span class="cl">
+</span></span><span class="line"><span class="ln">78</span><span class="cl">  <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">79</span><span class="cl">    <span class="nx">login</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">80</span><span class="cl">      <span class="k">this</span><span class="p">.</span><span class="nx">$axios</span>
+</span></span><span class="line"><span class="ln">81</span><span class="cl">        <span class="p">.</span><span class="nx">$post</span><span class="p">(</span><span class="s1">&#39;/api/register&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">form</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">82</span><span class="cl">        <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">83</span><span class="cl">          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">84</span><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="ln">85</span><span class="cl">        <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">86</span><span class="cl">          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">87</span><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="ln">88</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">89</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">90</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">91</span><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span></span></span></code></pre></div></p>
+<p>The <strong>register</strong> route can use the above component:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="nx">register</span> <span class="o">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/template&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Register</span> <span class="nx">from</span> <span class="s1">&#39;~/components/authentication/Register.vue&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">auth</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Register</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Hitting the <strong>register</strong> route would result in this user interface:</p>
+<p><img loading="lazy" 
+    src="/register_route.png" 
+    alt="file upload" 
+     
+    width=461 
+    height="328"  /></p>
+<h3 id="23-authenticated-user">
+    <a href="#23-authenticated-user" class="anchor">
+        <svg class="icon" aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+            <path fill-rule="evenodd"
+                d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+            </path>
+        </svg>
+    </a>
+    2.3. Authenticated user
+</h3>
+<p>For the authenticate user, a <strong>Dashboard</strong> component could be created.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">  <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">container</span> <span class="nx">fill</span><span class="o">-</span><span class="nx">height</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">row</span> <span class="nx">justify</span><span class="o">=</span><span class="s2">&#34;center&#34;</span> <span class="nx">align</span><span class="o">=</span><span class="s2">&#34;center&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">      <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">col</span> <span class="nx">cols</span><span class="o">=</span><span class="s2">&#34;12&#34;</span> <span class="nx">sm</span><span class="o">=</span><span class="s2">&#34;6&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">        <span class="nx">Hello</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">        <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">v</span><span class="o">-</span><span class="k">if</span><span class="o">=</span><span class="s2">&#34;user&#34;</span><span class="o">&gt;</span> <span class="p">{{</span> <span class="nx">user</span><span class="p">.</span><span class="nx">name</span> <span class="p">}}</span><span class="o">&lt;</span><span class="err">/span&gt;</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">      <span class="o">&lt;</span><span class="err">/v-col&gt;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="o">&lt;</span><span class="err">/v-row&gt;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">row</span> <span class="nx">justify</span><span class="o">=</span><span class="s2">&#34;center&#34;</span> <span class="nx">align</span><span class="o">=</span><span class="s2">&#34;center&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">      <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">col</span> <span class="nx">cols</span><span class="o">=</span><span class="s2">&#34;12&#34;</span> <span class="nx">sm</span><span class="o">=</span><span class="s2">&#34;6&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">        <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">btn</span> <span class="err">@</span><span class="nx">click</span><span class="o">=</span><span class="s2">&#34;logout&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">          <span class="nx">Logout</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="o">&lt;</span><span class="err">/v-btn&gt;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">      <span class="o">&lt;</span><span class="err">/v-col&gt;</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="o">&lt;</span><span class="err">/v-row&gt;</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">  <span class="o">&lt;</span><span class="err">/v-container&gt;</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="o">&lt;</span><span class="err">/template&gt;</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">
+</span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Welcome&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">  <span class="nx">data</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">      <span class="nx">user</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">  <span class="nx">created</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="k">this</span><span class="p">.</span><span class="nx">getAuthenticatedUser</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">  <span class="p">},</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl">
+</span></span><span class="line"><span class="ln">31</span><span class="cl">  <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">32</span><span class="cl">    <span class="kr">async</span> <span class="nx">getAuthenticatedUser</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;loggedIn : &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">$auth</span><span class="p">.</span><span class="nx">loggedIn</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">      <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">        <span class="kd">let</span> <span class="nx">response</span> <span class="o">=</span> <span class="kr">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">$axios</span><span class="p">.</span><span class="nx">$get</span><span class="p">(</span><span class="s1">&#39;/api/user&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="nx">user</span> <span class="o">=</span> <span class="nx">response</span>
+</span></span><span class="line"><span class="ln">37</span><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">38</span><span class="cl">      <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">39</span><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">40</span><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="ln">41</span><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="ln">42</span><span class="cl">    <span class="kr">async</span> <span class="nx">logout</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">43</span><span class="cl">      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;logout&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">44</span><span class="cl">      <span class="kr">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">$axios</span><span class="p">.</span><span class="nx">$post</span><span class="p">(</span><span class="s1">&#39;/api/logout&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">45</span><span class="cl">      <span class="k">this</span><span class="p">.</span><span class="nx">$router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">46</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">47</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">48</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">49</span><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span></span></span></code></pre></div>
+<p>Line 34 requests the <code>/api/user</code> route in <strong>server/routes/api.php</strong> declared earlier and which is guarded by Sanctum.</p>
+<p>This component displays the name of the user who is signed in successfully to the application, and offers a logout button to click and exit.</p>
+<p>The corresponding <strong>dashboard</strong> route can use the above component as follows:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">template</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">container</span> <span class="nx">fill</span><span class="o">-</span><span class="nx">height</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">row</span> <span class="nx">justify</span><span class="o">=</span><span class="s2">&#34;center&#34;</span> <span class="nx">align</span><span class="o">=</span><span class="s2">&#34;center&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">v</span><span class="o">-</span><span class="nx">col</span> <span class="nx">cols</span><span class="o">=</span><span class="s2">&#34;12&#34;</span> <span class="nx">sm</span><span class="o">=</span><span class="s2">&#34;6&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">welcome</span> <span class="o">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="err">/v-col&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="err">/v-row&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="err">/v-container&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/template&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">Welcome</span> <span class="nx">from</span> <span class="s1">&#39;~/components/Welcome.vue&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Dashboard&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">Welcome</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/script&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+</div>
+
+<div class="container">
+    
+    <nav class="flex container suggested">
+        
+        <a rel="prev" href="/post/vuejs-test-emit/" title="Previous post (older)">
+            <span>Previous</span>
+            Testing emit event in Vue.js using Jest and Vue Test Utils
+            </a>
+        
+        
+        
+    </nav>
+    
+</div>
+ 
+<div class="container">
+    
+    <script src="https://giscus.app/client.js" 
+        data-repo="WingLim/hugo-tania"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkzMTYyNjQzMDc="
+        
+        data-category="Comments"
+        data-category-id="DIC_kwDOEtnPc84B_WKP"
+        
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-theme="light"
+        crossorigin="anonymous"
+        async
+        >
+</script>
+
+<script>
+    function setGiscusTeheme(theme) {
+        let giscus = document.querySelector('.giscus iframe');
+        if (giscus) {
+            giscus.contentWindow.postMessage(
+                {
+                    giscus: {
+                        setConfig: {
+                            theme: theme
+                        }
+                    }
+                },
+                'https://giscus.app'
+            )
+        }
+    }
+
+    addEventListener('message', event => {
+        if (event.origin !== 'https://giscus.app') return;
+        setGiscusTeheme(document.documentElement.dataset.userColorScheme)
+    });
+
+    window.addEventListener('onColorSchemeChange', (e) => {
+        setGiscusTeheme(e.detail)
+    })
+</script>
+
+</div>
+
+</main>
+
+
+        </main>
+        <footer class="footer flex">
+    <section class="container">
+        <nav class="footer-links">
+            
+            <a href="/index.xml">RSS</a>
+            
+        </nav>
+
+        
+    </section>
+    <script defer src="/ts/features.706a523ba43e6d0427c7fdf2b9d05dbd0920d3f12942b453690b495cb2522743.js" 
+    data-enable-footnotes="true"
+    ></script>
+</footer>
+
+    </body>
+</html>

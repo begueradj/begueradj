@@ -29,7 +29,7 @@ To prevent spamming activities, website provide a challenge response test in the
 
 This is how POW CAPTCHA looks like:
 
-![POW CAPTCHA](/pow_captcha.gif)
+![POW CAPTCHA](pow_captcha.gif)
 
 While this technique makes your surfing easier and flatters your laziness in that you do not need to solve the CAPTCHA manually by yourself, you pay the website by letting it exploit your CPU and raise your electrical bills. Of course, depending on the speed and power of your machine, you may wait more or less than other visitors to be able to surf on the website in question.
 

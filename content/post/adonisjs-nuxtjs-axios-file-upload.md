@@ -34,7 +34,7 @@ layouts/
 ```
 
 And this is the simple user interface I want to create: 
-![file upload](/file_upload.png)
+![file upload](file_upload.png)
 
 Basically I like to have `MainPage.vue` component to wrap all my other components; in this case I need only the `FileUpload.vue` component:
 

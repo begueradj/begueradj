@@ -1,158 +1,83 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>https://www.begueradj.com/</loc>
+    <loc>https://example.com/</loc>
+    <lastmod>2021-08-07T12:33:21+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/categories/</loc>
+    <lastmod>2021-08-07T12:33:21+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/categories/development/</loc>
+    <lastmod>2021-08-07T12:33:21+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/post/laravel-sanctum-nuxt-vuetify/</loc>
+    <lastmod>2021-08-07T12:33:21+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/post/</loc>
+    <lastmod>2021-08-07T12:33:21+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/post/vuejs-test-emit/</loc>
     <lastmod>2020-07-13T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/categories/</loc>
-    <lastmod>2020-07-13T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/categories/development/</loc>
-    <lastmod>2020-07-13T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/post/</loc>
-    <lastmod>2020-07-13T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/testing-emit-event-in-vue.js-using-jest-and-vue-test-utils/</loc>
-    <lastmod>2020-07-13T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/how-to-use-moment.js-with-adonisjs/</loc>
+  </url><url>
+    <loc>https://example.com/post/how-to-use-moment.js-with-adonisjs/</loc>
     <lastmod>2019-04-19T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/effective-file-streaming-using-adonisjs/</loc>
+  </url><url>
+    <loc>https://example.com/post/effective-file-streaming-using-adonisjs/</loc>
     <lastmod>2019-04-14T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/file-upload-from-a-nuxt.js-client-to-an-adonisjs-restful-api-server-using-axios/</loc>
+  </url><url>
+    <loc>https://example.com/post/adonisjs-nuxtjs-axios-file-upload/</loc>
     <lastmod>2019-01-12T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/linux-commands/</loc>
-    <lastmod>2018-12-18T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/nuxt.js-deployment-on-gitlab/</loc>
+  </url><url>
+    <loc>https://example.com/post/deploy-nuxt-gitlab/</loc>
     <lastmod>2018-11-18T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/php-unit-testing/</loc>
-    <lastmod>2018-08-20T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/a-slightly-improved-version-of-bubble-sort-algorithm/</loc>
-    <lastmod>2018-07-16T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/how-to-install-opencv-4.0-for-python3.6.5-on-ubuntu-18.04-lts/</loc>
+  </url><url>
+    <loc>https://example.com/post/install-opencv-python3-ubuntu18/</loc>
     <lastmod>2018-06-01T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/python-decorators/</loc>
+  </url><url>
+    <loc>https://example.com/post/python-decorators/</loc>
     <lastmod>2018-02-18T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/cryptojacking-cryptography-in-service-of-the-devil/</loc>
+  </url><url>
+    <loc>https://example.com/post/cryptojacking/</loc>
     <lastmod>2018-01-07T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/categories/security/</loc>
+  </url><url>
+    <loc>https://example.com/categories/security/</loc>
     <lastmod>2018-01-07T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/vigen%C3%A8re-cipher-simplified-implementation/</loc>
-    <lastmod>2017-11-12T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/installing-selenium-drivers-on-ubuntu/</loc>
+  </url><url>
+    <loc>https://example.com/post/selenium/</loc>
     <lastmod>2017-10-15T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/do-not-make-a-direct-use-of-function-parameters/</loc>
+  </url><url>
+    <loc>https://example.com/post/function-parameters/</loc>
     <lastmod>2017-09-04T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/tkinter-best-practices/</loc>
+  </url><url>
+    <loc>https://example.com/post/tkinter-best-practices/</loc>
     <lastmod>2017-06-27T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/how-to-contribute-to-flask/</loc>
-    <lastmod>2017-05-13T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/introduction-to-flask/</loc>
-    <lastmod>2017-05-08T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/xml-parsing-with-minidom/</loc>
+  </url><url>
+    <loc>https://example.com/post/minidom/</loc>
     <lastmod>2017-04-23T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/python-singleton-design-pattern/</loc>
+  </url><url>
+    <loc>https://example.com/post/python-singleton-design-pattern/</loc>
     <lastmod>2017-04-08T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/tkinter-the-saya-idiom/</loc>
+  </url><url>
+    <loc>https://example.com/post/saya-idiom/</loc>
     <lastmod>2017-03-19T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/python-unit-testing/</loc>
+  </url><url>
+    <loc>https://example.com/post/python-unit-testing/</loc>
     <lastmod>2017-03-13T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/installing-opencv-3.2.0-for-python-3.5.2-on-ubuntu-16.04.2-lts/</loc>
+  </url><url>
+    <loc>https://example.com/post/opencv-ubuntu16/</loc>
     <lastmod>2017-01-29T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/javascript-malware/</loc>
+  </url><url>
+    <loc>https://example.com/post/javascript-malware/</loc>
     <lastmod>2017-01-24T12:33:21+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/mozilla-beheads-sha-1/</loc>
+  </url><url>
+    <loc>https://example.com/post/mozilla-sha1/</loc>
     <lastmod>2017-01-17T12:33:21+08:00</lastmod>
+  </url><url>
+    <loc>https://example.com/about/</loc>
+  </url><url>
+    <loc>https://example.com/articles/</loc>
+  </url><url>
+    <loc>https://example.com/tags/</loc>
   </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.begueradj.com/tags/</loc>
-  </url>
-  
 </urlset>

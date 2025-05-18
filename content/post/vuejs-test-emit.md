@@ -9,7 +9,7 @@ Often we need to design a custom component which needs to communicate data with 
 
 For this purpose, let us implement the below user interface which consists of a label Vuetify component reflecting what is being typed within the input field:
 
-![file upload](/emit_event.png)
+![file upload](emit_event.png)
 
 I am going to use Nuxt.js with Vuetify to simplify the task. 
 In **pages/index.vue**, we have this:

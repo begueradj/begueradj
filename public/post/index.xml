@@ -1,270 +1,206 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Begueradj</title>
-    <link>https://www.begueradj.com/post/</link>
-    <description>Recent content in Posts on Begueradj</description>
+    <title>Posts on Billal BEGUERADJ</title>
+    <link>https://example.com/post/</link>
+    <description>Recent content in Posts on Billal BEGUERADJ</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 13 Jul 2020 12:33:21 +0800</lastBuildDate>
-    
-	<atom:link href="https://www.begueradj.com/post/index.xml" rel="self" type="application/rss+xml" />
-    
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Aug 2021 12:33:21 +0800</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Laravel Sanctum with Nuxt and Vuetify SPA</title>
+      <link>https://example.com/post/laravel-sanctum-nuxt-vuetify/</link>
+      <pubDate>Sat, 07 Aug 2021 12:33:21 +0800</pubDate>
+      
+      <guid>https://example.com/post/laravel-sanctum-nuxt-vuetify/</guid>
+      <description>Sanctum allows, among other things, to authenticate an SPA via cookies using the web authentication guard. The following discussion shows how to create a single page application using Nuxt.js and VuetifyJs to connect it (sign up, sign in and logout a user) to a backend API through Laravel Sanctum. Laravel 8 is the version used below.
+1. Backend Below creates a new Laravel project named &amp;lsquo;server&amp;rsquo;:
+1 composer create-project --prefer-dist laravel/laravel server Once the database settings are done in server/.</description>
+    </item>
     
     <item>
       <title>Testing emit event in Vue.js using Jest and Vue Test Utils</title>
-      <link>https://www.begueradj.com/testing-emit-event-in-vue.js-using-jest-and-vue-test-utils/</link>
+      <link>https://example.com/post/vuejs-test-emit/</link>
       <pubDate>Mon, 13 Jul 2020 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/testing-emit-event-in-vue.js-using-jest-and-vue-test-utils/</guid>
+      <guid>https://example.com/post/vuejs-test-emit/</guid>
       <description>Often we need to design a custom component which needs to communicate data with its parent. One way to achieve this is to rely on the emit event through the v-model directive. The aim of this article is to show how to test emit event using Vue Test Utils and Jest.
 For this purpose, let us implement the below user interface which consists of a label Vuetify component reflecting what is being typed within the input field:</description>
     </item>
     
     <item>
       <title>How to use Moment.js with AdonisJs</title>
-      <link>https://www.begueradj.com/how-to-use-moment.js-with-adonisjs/</link>
+      <link>https://example.com/post/how-to-use-moment.js-with-adonisjs/</link>
       <pubDate>Fri, 19 Apr 2019 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/how-to-use-moment.js-with-adonisjs/</guid>
+      <guid>https://example.com/post/how-to-use-moment.js-with-adonisjs/</guid>
       <description>Preamble I decided to write this article following a question published yesterday on the AdonisJs community forum solliciting if there is a tutorial that shows how to use Moment.js in AdonisJs. I answered to that question yesterday, but I would like to share the information with others here.
 Do not try to install Moment.js because Adonis.js uses it internally. This means you can take any Moment.js instance and apply on it any Moment.</description>
     </item>
     
     <item>
       <title>Effective file streaming using AdonisJs</title>
-      <link>https://www.begueradj.com/effective-file-streaming-using-adonisjs/</link>
+      <link>https://example.com/post/effective-file-streaming-using-adonisjs/</link>
       <pubDate>Sun, 14 Apr 2019 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/effective-file-streaming-using-adonisjs/</guid>
+      <guid>https://example.com/post/effective-file-streaming-using-adonisjs/</guid>
       <description>Preamble The majority of upload libraries/frameworks process files multiple times when streaming to an external service such as Amazon S3. Their upload workflows are usually designed like so:
- Process request files then save them to the tmp directory. Move each file from the tmp directory to the destination directory. Use the external service’s SDK to finally stream the file to the external service.  This process wastes server resources reading/writing single files multiple times.</description>
+Process request files then save them to the tmp directory. Move each file from the tmp directory to the destination directory. Use the external service’s SDK to finally stream the file to the external service. This process wastes server resources reading/writing single files multiple times.</description>
     </item>
     
     <item>
       <title>File upload from a Nuxt.js client to an AdonisJS RESTful API server using axios</title>
-      <link>https://www.begueradj.com/file-upload-from-a-nuxt.js-client-to-an-adonisjs-restful-api-server-using-axios/</link>
+      <link>https://example.com/post/adonisjs-nuxtjs-axios-file-upload/</link>
       <pubDate>Sat, 12 Jan 2019 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/file-upload-from-a-nuxt.js-client-to-an-adonisjs-restful-api-server-using-axios/</guid>
+      <guid>https://example.com/post/adonisjs-nuxtjs-axios-file-upload/</guid>
       <description>Preamble AdonisJs documentation shows how to upload files to the server using the HTML5 &amp;lt;form&amp;gt; element. But there are cases where axios comes more handy. So let us see how to upload files from a Nuxt.js client application to an AdonisJS RESTful API server with axios. I shared this project on my Github profile.
 Project setup In my demo, the client and server code are set apart. My client application is handled by Nuxt.</description>
     </item>
     
     <item>
-      <title>Linux commands</title>
-      <link>https://www.begueradj.com/linux-commands/</link>
-      <pubDate>Tue, 18 Dec 2018 12:33:21 +0800</pubDate>
-      
-      <guid>https://www.begueradj.com/linux-commands/</guid>
-      <description>Preamble This article is going to be updated and become longer as the time goes on. I am listing some of the commands I rarely use but I do not want to forget. Of course, I gleaned most of them on the web, sorry for not being able to mention the resources for each listed one below.
- Emacs Git Fast copy data  
-1. Emacs Set JS indentation to 2 in Vue.</description>
-    </item>
-    
-    <item>
       <title>Nuxt.js deployment on Gitlab</title>
-      <link>https://www.begueradj.com/nuxt.js-deployment-on-gitlab/</link>
+      <link>https://example.com/post/deploy-nuxt-gitlab/</link>
       <pubDate>Sun, 18 Nov 2018 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/nuxt.js-deployment-on-gitlab/</guid>
+      <guid>https://example.com/post/deploy-nuxt-gitlab/</guid>
       <description>How to deploy your Nuxt.js application on Gitlab for continuous integration?
 First create a Gitlab CI YAML file and name it .gitlab-ci.yml with the following commands:
-image: node before_script: - npm install cache: paths: - node_modules/ pages: script: - npm run generate artifacts: paths: - public only: - master  Then in nuxt.config.js, add these configuration lines:
-/** * Gitlab */ router: { base: &#39;/whatEverName/&#39;, }, generate: { dir: &#39;public&#39;, },  After running the CI job, and on the project’s repository, go to Settings then Pages and click on https://namespace.</description>
-    </item>
-    
-    <item>
-      <title>PHP unit testing</title>
-      <link>https://www.begueradj.com/php-unit-testing/</link>
-      <pubDate>Mon, 20 Aug 2018 12:33:21 +0800</pubDate>
-      
-      <guid>https://www.begueradj.com/php-unit-testing/</guid>
-      <description>These are the steps to install and set the necessary tools to run unit tests in PHP projects:
-Installing Composer on Ubuntu 16.04 LTS:
-curl -sS https://getcomposer.org/installer | php sudo mv composer.phar /usr/local/bin/composer  Installing PHPUnittest:
-{ &amp;quot;require-dev&amp;quot;: { &amp;quot;phpunit/phpunit&amp;quot;: &amp;quot;^7&amp;quot; } }  Install xdebug on Ubuntu 16.04 LTS.
-Run the tests:
-./vendor/bin/phpunit --bootstrap vendor/autoload.php tests/EmailTest.php  Run the code coverage:
-./vendor/bin/phpunit --coverage-html . tests/EmailTest.php  Setting phpunit.xml file I created the phpunit.</description>
-    </item>
-    
-    <item>
-      <title>A slightly improved version of bubble sort algorithm</title>
-      <link>https://www.begueradj.com/a-slightly-improved-version-of-bubble-sort-algorithm/</link>
-      <pubDate>Mon, 16 Jul 2018 12:33:21 +0800</pubDate>
-      
-      <guid>https://www.begueradj.com/a-slightly-improved-version-of-bubble-sort-algorithm/</guid>
-      <description>My wicked brain gave birth to an improved version of the classic bubble sort algorithm. Here it is.
-This document is not about explaining the bubble sort algorithm as it already exists a good literature out there about it, and it is a classic algorithm studied and known by all CS students all over the world.
-There are, obviously, two improved versions of bubble sort algorithm; and thanks to a question asked the Code Review website regarding the first one of them which is:</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 image: node before_script: - npm install cache: paths: - node_modules/ pages: script: - npm run generate artifacts: paths: - public only: - master Then in nuxt.config.js, add these configuration lines:</description>
     </item>
     
     <item>
       <title>How to install OpenCV 4.0 for Python3.6.5 on Ubuntu 18.04 LTS</title>
-      <link>https://www.begueradj.com/how-to-install-opencv-4.0-for-python3.6.5-on-ubuntu-18.04-lts/</link>
+      <link>https://example.com/post/install-opencv-python3-ubuntu18/</link>
       <pubDate>Fri, 01 Jun 2018 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/how-to-install-opencv-4.0-for-python3.6.5-on-ubuntu-18.04-lts/</guid>
+      <guid>https://example.com/post/install-opencv-python3-ubuntu18/</guid>
       <description>I know OpenCV 4.0.0 will rather be released on July 2018, but the installation procedure I describe here will not change. In fact, I already I installed and tested OpenCV 4.0.0-pre on Ubuntu 18.04 (to be continued soon)
 I want to share my own experience regarding this procedure. Whenever I tried this or that tutorial related to installing a recent OpenCV version for Python3.x, I stumble on errors which are not recovered by those tutorials.</description>
     </item>
     
     <item>
       <title>Python decorators</title>
-      <link>https://www.begueradj.com/python-decorators/</link>
+      <link>https://example.com/post/python-decorators/</link>
       <pubDate>Sun, 18 Feb 2018 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/python-decorators/</guid>
+      <guid>https://example.com/post/python-decorators/</guid>
       <description>What are the origins and goals of Python decorators? How to implement them and why are they useful?
 Introduction Even when dealing with scientific and technical subjects, your subjectivity rules over you. I mean, each person has her own style in learning and explaining ideas. This subjective aspect is shaped not only by your intellectual capacities but more importantly by your personality. By personality, I mean how you see and interpret things.</description>
     </item>
     
     <item>
       <title>Cryptojacking: cryptography in service of the Devil</title>
-      <link>https://www.begueradj.com/cryptojacking-cryptography-in-service-of-the-devil/</link>
+      <link>https://example.com/post/cryptojacking/</link>
       <pubDate>Sun, 07 Jan 2018 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/cryptojacking-cryptography-in-service-of-the-devil/</guid>
+      <guid>https://example.com/post/cryptojacking/</guid>
       <description>A new revenue stream has been implemented by the end of the last year. Maybe cryptojacking did not get yet the hype it deserves but it has been already widely used. Most Internet consumers are not aware of it though its intentions are far from being innocent. It may also generate inequalities among Internet users.
 Definition Cryptojacking is about using the user’s device processor, with or without his consent, to mine cryptocurrency when visiting a given webpage which is not necessarily compromised but can do that on purpose.</description>
     </item>
     
     <item>
-      <title>Vigenère cipher simplified implementation</title>
-      <link>https://www.begueradj.com/vigen%C3%A8re-cipher-simplified-implementation/</link>
-      <pubDate>Sun, 12 Nov 2017 12:33:21 +0800</pubDate>
-      
-      <guid>https://www.begueradj.com/vigen%C3%A8re-cipher-simplified-implementation/</guid>
-      <description>This is not an other dissertation on Vigenère cipher. This encryption algorithm is profusely discussed in cryptography literature. Here is rather a simplified yet efficient implementation of it.
-The goal of this article is not to about debating the theory of Vigenère cipher. I rather just want to focus on its implementation after I have seen several awkward ways of proceeding to it on different online programming forums.
-This question on Code Review website is an example of such implementations where code duplication is obvious but which the pre-existing answers did not address.</description>
-    </item>
-    
-    <item>
       <title>Installing Selenium drivers on Ubuntu</title>
-      <link>https://www.begueradj.com/installing-selenium-drivers-on-ubuntu/</link>
+      <link>https://example.com/post/selenium/</link>
       <pubDate>Sun, 15 Oct 2017 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/installing-selenium-drivers-on-ubuntu/</guid>
+      <guid>https://example.com/post/selenium/</guid>
       <description>Here is a common exception raised when trying to invoke selenium’s webriver component for browser automation launching. Here is how to fix it.
 For a professional need, I installed selenium testing framework on Ubuntu 17.04 LTS within a virtual environment I created using the recommended method I found on the documentation:
-pip install selenium  Chrome I then tried to launch my website on Chrome:
-from selenium import webdriver driver = webdriver.</description>
+1 pip install selenium Chrome I then tried to launch my website on Chrome:
+1 2 3 4 5 from selenium import webdriver driver = webdriver.</description>
     </item>
     
     <item>
       <title>Do not make a direct use of function parameters</title>
-      <link>https://www.begueradj.com/do-not-make-a-direct-use-of-function-parameters/</link>
+      <link>https://example.com/post/function-parameters/</link>
       <pubDate>Mon, 04 Sep 2017 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/do-not-make-a-direct-use-of-function-parameters/</guid>
+      <guid>https://example.com/post/function-parameters/</guid>
       <description>Today, I have answered a question on Code Review website. The OP’s code sample itself was simple, but a user commented my answer stating that he never heard about function’s parameters should not be used directly.
 Following my answer to this question, I wrote this: &amp;ldquo;Whatever the programming language you use, do not use the parameters inside your function&amp;rdquo; and I explained what I meant:
-def my_function(param): par = param # Now work with &amp;quot;par&amp;quot; instead of &amp;quot;param&amp;quot;  A user was curious about the last section of my thread and commented: &amp;ldquo;Is your point on &amp;lsquo;do not use function params directly, no matter what language&amp;rsquo; (paraphrased) definitely correct?</description>
+1 2 3 def my_function(param): par = param # Now work with &amp;#34;par&amp;#34; instead of &amp;#34;param&amp;#34; A user was curious about the last section of my thread and commented: &amp;ldquo;Is your point on &amp;lsquo;do not use function params directly, no matter what language&amp;rsquo; (paraphrased) definitely correct?</description>
     </item>
     
     <item>
       <title>Tkinter best practices</title>
-      <link>https://www.begueradj.com/tkinter-best-practices/</link>
+      <link>https://example.com/post/tkinter-best-practices/</link>
       <pubDate>Tue, 27 Jun 2017 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/tkinter-best-practices/</guid>
+      <guid>https://example.com/post/tkinter-best-practices/</guid>
       <description>Tkinter is the standard Python interface to Tk/Tcl GUI toolkit. Programmers often wonder how to structure their tkinter program. In this article, I am going to answer to a question posted on StackOverflow which contributions drift away from some of software engineering fundamentals.
 I see many questions posted on StackOverflow and CodeReview asking for tkinter best practices and improvements. While many of the contributions to those questions are interesting, they also teach bad and even harmful coding habits that result in scalability and maintenance issues.</description>
     </item>
     
     <item>
-      <title>How to contribute to Flask</title>
-      <link>https://www.begueradj.com/how-to-contribute-to-flask/</link>
-      <pubDate>Sat, 13 May 2017 12:33:21 +0800</pubDate>
-      
-      <guid>https://www.begueradj.com/how-to-contribute-to-flask/</guid>
-      <description>I am an opensource advocate. I want to contribute to Flask microframework. So I followed the official documentation on GitHub where I stumbled on 6 issues. The problem is that the documentation itself is misleading and that can be a good starting point.
-I want to contribute to Python Flask microframework. I read its CONTRIBUTING.rst file from GitHub. I encountered few issues because the documentation is not clear for me. It even sounds to be outdated.</description>
-    </item>
-    
-    <item>
-      <title>Introduction to Flask</title>
-      <link>https://www.begueradj.com/introduction-to-flask/</link>
-      <pubDate>Mon, 08 May 2017 12:33:21 +0800</pubDate>
-      
-      <guid>https://www.begueradj.com/introduction-to-flask/</guid>
-      <description>This articles shakes hands with Python web development. It introduces the Flask microframework. It is rather a light and soft introduction in that it tells the newbies only what they need to know at this stage. It is intentionally kept short, simple and without confusing terminology.
- What is Flask? Installation Components Example  
-What is Flask? Flask is a web development Python framework. More precisely, it is a microframework because it is so small that you could quite quickly be familiar with its source code.</description>
-    </item>
-    
-    <item>
       <title>XML parsing with minidom</title>
-      <link>https://www.begueradj.com/xml-parsing-with-minidom/</link>
+      <link>https://example.com/post/minidom/</link>
       <pubDate>Sun, 23 Apr 2017 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/xml-parsing-with-minidom/</guid>
+      <guid>https://example.com/post/minidom/</guid>
       <description>This is a basic tutorial to introduce minidom. In fact, this is not really a tutorial but just a few list of notes about this library as there is already a short but good tutorial about it online1.
 Let us consider this XML data:
-&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;stock&amp;gt; &amp;lt;product id=&amp;quot;p1&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Product 1&amp;lt;/title&amp;gt; &amp;lt;reference&amp;gt;999-X&amp;lt;/reference&amp;gt; &amp;lt;price&amp;gt;20.10&amp;lt;/price&amp;gt; &amp;lt;dimensions&amp;gt; &amp;lt;weight&amp;gt;4&amp;lt;/weight&amp;gt; &amp;lt;height&amp;gt;50&amp;lt;/height&amp;gt; &amp;lt;width&amp;gt;20&amp;lt;/width&amp;gt; &amp;lt;/dimensions&amp;gt; &amp;lt;/product&amp;gt; &amp;lt;product id=&amp;quot;p2&amp;quot;&amp;gt; &amp;lt;title&amp;gt;Product 2&amp;lt;/title&amp;gt; &amp;lt;reference&amp;gt;999-B&amp;lt;/reference&amp;gt; &amp;lt;price&amp;gt;55.5&amp;lt;/price&amp;gt; &amp;lt;dimensions&amp;gt; &amp;lt;weight&amp;gt;3.99&amp;lt;/weight&amp;gt; &amp;lt;height&amp;gt;50&amp;lt;/height&amp;gt; &amp;lt;width&amp;gt;20&amp;lt;/width&amp;gt; &amp;lt;/dimensions&amp;gt; &amp;lt;/product&amp;gt; &amp;lt;/stock&amp;gt;  You can either save this as an XML file or consider it as a string.</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;stock&amp;gt; &amp;lt;product id=&amp;#34;p1&amp;#34;&amp;gt; &amp;lt;title&amp;gt;Product 1&amp;lt;/title&amp;gt; &amp;lt;reference&amp;gt;999-X&amp;lt;/reference&amp;gt; &amp;lt;price&amp;gt;20.</description>
     </item>
     
     <item>
       <title>Python singleton design pattern</title>
-      <link>https://www.begueradj.com/python-singleton-design-pattern/</link>
+      <link>https://example.com/post/python-singleton-design-pattern/</link>
       <pubDate>Sat, 08 Apr 2017 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/python-singleton-design-pattern/</guid>
+      <guid>https://example.com/post/python-singleton-design-pattern/</guid>
       <description>This article describes the main strategies to implement the Singleton design pattern in Python. I am going to skip the whole very subjective &amp;ldquo;use and do not use singleton&amp;rdquo; conundrum.
- Introduction Definition Implementation  Module Traditional Decoractor Metaclass Borg  Conclusion  
-Introduction There are developers who simply call to &amp;ldquo;ban&amp;rdquo; this design pattern. Personally, I think while it does not respect the single responsibility principle, the singleton may still be useful in situations where you need to control a concurrent access to a shared resource, or want to use it to implement other design patterns.</description>
+Introduction Definition Implementation Module Traditional Decoractor Metaclass Borg Conclusion Introduction There are developers who simply call to &amp;ldquo;ban&amp;rdquo; this design pattern. Personally, I think while it does not respect the single responsibility principle, the singleton may still be useful in situations where you need to control a concurrent access to a shared resource, or want to use it to implement other design patterns.</description>
     </item>
     
     <item>
       <title>tkinter: the SaYa idiom</title>
-      <link>https://www.begueradj.com/tkinter-the-saya-idiom/</link>
+      <link>https://example.com/post/saya-idiom/</link>
       <pubDate>Sun, 19 Mar 2017 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/tkinter-the-saya-idiom/</guid>
+      <guid>https://example.com/post/saya-idiom/</guid>
       <description>Python is a paramount programming languages. The same is to be said about user graphical interfaces. SaYa is an idiom I devised for tkinter developers to help them build less error-prone applications.
- Background Explanation Motivation Statement Advantages  
-Background This morning I landed on this question asked on StackOverflow where the OP stumbled on this error he shared through his/her comment to my answer:
-NoneType&#39; object has no attribute &#39;destroy&#39;  The origin of the problem is that the OP created a button widget within the class initializer and positioned in the same time:</description>
+Background Explanation Motivation Statement Advantages Background This morning I landed on this question asked on StackOverflow where the OP stumbled on this error he shared through his/her comment to my answer:
+1 NoneType&amp;#39; object has no attribute &amp;#39;destroy&amp;#39; The origin of the problem is that the OP created a button widget within the class initializer and positioned in the same time:</description>
     </item>
     
     <item>
       <title>Python unit testing</title>
-      <link>https://www.begueradj.com/python-unit-testing/</link>
+      <link>https://example.com/post/python-unit-testing/</link>
       <pubDate>Mon, 13 Mar 2017 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/python-unit-testing/</guid>
+      <guid>https://example.com/post/python-unit-testing/</guid>
       <description>Introduction I first thought to write about TDD (Test-Driven Development), but given the list of reminders I have to emphasize and which would lead to a very lengthy article, I decided to shrink the work into smaller edible articles.
 You can find a lots of documentation about unit testing with Python on the Internet, so why am I adding this brick? That is not your business. But landing on this page will be useful for you as I found highly ranked -by Google- online resources discussing Python unit testing where the authors either mislead you at best or misinform you, not because they do not know but because they do not give importance to details.</description>
     </item>
     
     <item>
       <title>Installing OpenCV 3.2.0 for Python 3.5.2 on Ubuntu 16.04.2 LTS</title>
-      <link>https://www.begueradj.com/installing-opencv-3.2.0-for-python-3.5.2-on-ubuntu-16.04.2-lts/</link>
+      <link>https://example.com/post/opencv-ubuntu16/</link>
       <pubDate>Sun, 29 Jan 2017 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/installing-opencv-3.2.0-for-python-3.5.2-on-ubuntu-16.04.2-lts/</guid>
+      <guid>https://example.com/post/opencv-ubuntu16/</guid>
       <description>You will learn how to install OpenCV 3.2.0 on Ubuntu 16.04.2 LTS to work with Python 3.5.2.
 Introduction I just freshly finished the installation of Ubuntu 16.04.2 LTS on my new laptop, so I had to install the programming environments I need. As I am passionate of image processing and computer vision, I needed to re-install the latest version of OpenCV (3.2.0) to be able to use it with Python 3.</description>
     </item>
     
     <item>
       <title>JavaScript malware</title>
-      <link>https://www.begueradj.com/javascript-malware/</link>
+      <link>https://example.com/post/javascript-malware/</link>
       <pubDate>Tue, 24 Jan 2017 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/javascript-malware/</guid>
+      <guid>https://example.com/post/javascript-malware/</guid>
       <description>What are the JavaScript malware attack techniques and how to prevent from them?
 Note: I first published this as an answer on InfoSec website under a previous and now deleted profile.
- Server side polymorphism  Literally meaning many shapes, polymorphism is a technique used by malware authors to evade signatures based detectors. Polymorphism is qualified as being server sided when the engine which produces several but different copies of the malware is hosted on a compromised web server (Server-Side Polymorphism: Crime-Ware as a Service Model (CaaS)).</description>
+Server side polymorphism Literally meaning many shapes, polymorphism is a technique used by malware authors to evade signatures based detectors. Polymorphism is qualified as being server sided when the engine which produces several but different copies of the malware is hosted on a compromised web server (Server-Side Polymorphism: Crime-Ware as a Service Model (CaaS)).</description>
     </item>
     
     <item>
       <title>Mozilla beheads SHA-1</title>
-      <link>https://www.begueradj.com/mozilla-beheads-sha-1/</link>
+      <link>https://example.com/post/mozilla-sha1/</link>
       <pubDate>Tue, 17 Jan 2017 12:33:21 +0800</pubDate>
       
-      <guid>https://www.begueradj.com/mozilla-beheads-sha-1/</guid>
+      <guid>https://example.com/post/mozilla-sha1/</guid>
       <description>You have heard of SHA-1 deprecation since 2012. Mozilla finally confirms this is not a joke.
 May be you are tired of hearing over and over again about SHA-1 deprecation since 2012 when Bruce Schneier announced that collision attacks may be cost around $700k to perform by 2015, which was the year where the first practical full-on collision attack was lead out by researchers who predicted a costless real world attack may occur on 2018.</description>
     </item>

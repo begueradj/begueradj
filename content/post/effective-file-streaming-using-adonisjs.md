@@ -25,7 +25,7 @@ That is what you can read on the official AdonisJs documentation. Here we learn 
 
 And this is the simple user interface I want to create: 
 
-![file streaming](/adonisjs-file-streaming.png)
+![file streaming](adonisjs-file-streaming.png)
 
 The left button will be used to upload a file to the RESTful API server. The right button will be used to download it and display it on the right side
 
